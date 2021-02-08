@@ -8,3 +8,7 @@ Host target02
     HostName 0.0.0.0
     Port 2223
     User foo
+Host target03
+    HostName 0.0.0.0
+    Port 2224
+    User john
