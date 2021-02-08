@@ -25,10 +25,15 @@
       "text": "finish.md"
     }
   },
+  "assets": {
+    "host01": [
+      { "file": "tools/setup.sh",    "target": "~/" }
+    ]
+  },
   "environment": {
     "uilayout": "editor-terminal"
   },
   "backend": {
-    "imageid": "ansible"
+    "imageid": "centos-vm"
   }
 }
