@@ -56,5 +56,5 @@ services:
       - USER_PASSWORD_FILE=/path/to/file #optional
       - USER_NAME=foo #optional
     ports:
-      - 2223:2222
+      - 2224:2222
     restart: unless-stopped
