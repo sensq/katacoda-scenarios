@@ -2,7 +2,6 @@
 
 # Configure Prompt
 echo "export PS1=\"[\u@\h \w]\$ \"" > /etc/profile.d/init-env.sh
-source /etc/profile.d/init-env.sh
 
 # Generate SSH Key
 ssh-keygen -t rsa -N "" -f ~/.ssh/test_key
