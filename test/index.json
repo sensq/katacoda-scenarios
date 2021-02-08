@@ -23,12 +23,12 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        { "file": "tools/setup.sh", "target": "~/" }
+      ]
     }
-  },
-  "assets": {
-    "host01": [
-      { "file": "tools/setup.sh",    "target": "~/" }
-    ]
   },
   "environment": {
     "uilayout": "editor-terminal"
