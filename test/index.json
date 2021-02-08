@@ -20,7 +20,7 @@
     ],
     "intro": {
       "text": "intro.md",
-      "foreground": "init-install.sh"
+      "courseData": "init-install.sh"
     },
     "finish": {
       "text": "finish.md"
