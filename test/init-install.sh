@@ -13,6 +13,8 @@ chmod +x /usr/local/bin/docker-compose
 # Generate SSH Key
 ssh-keygen -t rsa -N "" -f ~/.ssh/test_key
 export PUBLIC_KEY=$(cat ~/.ssh/test_key.pub)
+
+# Up sshd-containers(=Pseudo target server)
 docker-compose up -d -f ~/tools/docker-compose.yaml
 
 # Configure Prompt
