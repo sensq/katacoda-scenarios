@@ -15,9 +15,10 @@ ssh-keygen -t rsa -N "" -f ~/.ssh/test_key
 export PUBLIC_KEY=$(cat ~/.ssh/test_key.pub)
 
 # Up sshd-containers(=Pseudo target server)
-docker-compose up -d -f ~/tools/docker-compose.yaml
+cd ~/tools
+docker-compose up -d
 
 # Configure Prompt
-export PS1="[\u@\h \w]\$ "
+echo "export PS1=\"[\u@\h \w]\$ \"" > /etc/profile.d/init-env
 
 cd ~
