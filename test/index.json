@@ -19,7 +19,8 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "courseData": "init-install.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -34,6 +35,6 @@
     "uilayout": "editor-terminal"
   },
   "backend": {
-    "imageid": "centos-vm"
+    "imageid": "centos"
   }
 }
