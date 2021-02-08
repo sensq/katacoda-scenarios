@@ -27,7 +27,7 @@
     },
     "assets": {
       "host01": [
-        { "file": "tools/", "target": "/root"}
+        { "file": "tools/*", "target": "/root/"}
       ]
     }
   },
