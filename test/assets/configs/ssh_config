@@ -1,10 +1,10 @@
 Host *
     StrictHostKeyChecking no
 Host target01
-    HostName target01
+    HostName 0.0.0.0
     Port 2222
     User hoge
 Host target02
-    HostName target02
+    HostName 0.0.0.0
     Port 2223
     User foo
