@@ -28,7 +28,7 @@
     "assets": {
       "host01": [
         { "file": "tools/*", "target": "~/"},
-        { "file": "configs/ssh_config", "target": "~/.ssh/config"},
+        { "file": "configs/*", "target": "~/"},
         { "file": "works/*", "target": "~/"}
       ]
     }

@@ -12,6 +12,7 @@ chmod +x /usr/local/bin/docker-compose
 
 # Generate SSH Key
 ssh-keygen -t rsa -N "" -f ~/.ssh/test_key
+cp -fp ~/configs/ssh_config ~/.ssh/config
 
 # Up sshd-containers(=Pseudo target server)
 cd ~/tools
