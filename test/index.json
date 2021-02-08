@@ -27,7 +27,7 @@
     },
     "assets": {
       "host01": [
-        { "file": "setup.sh", "target": "~/" }
+        { "file": "tools/setup.sh", "target": "~/", "chmod": "+x"}
       ]
     }
   },
