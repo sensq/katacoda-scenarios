@@ -54,7 +54,7 @@ services:
       - PASSWORD_ACCESS=true #optional
       - USER_PASSWORD=password03 #optional
       - USER_PASSWORD_FILE=/path/to/file #optional
-      - USER_NAME=foo #optional
+      - USER_NAME=john #optional
     ports:
       - 2224:2222
     restart: unless-stopped
