@@ -1,0 +1,5 @@
+all:
+  hosts:
+    localhost:
+    target01:
+    target02:

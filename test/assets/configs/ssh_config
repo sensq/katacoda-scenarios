@@ -1,0 +1,10 @@
+Host *
+    StrictHostKeyChecking no
+Host target01
+    HostName target01
+    Port 2222
+    User hoge
+Host target02
+    HostName target02
+    Port 2223
+    User foo

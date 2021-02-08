@@ -21,4 +21,5 @@ docker-compose up -d
 # Configure Prompt
 echo "export PS1=\"[\u@\h \w]\$ \"" > /etc/profile.d/init-env
 
-cd ~
+# Katacoda start directory
+cd ~/works
