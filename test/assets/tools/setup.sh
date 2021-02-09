@@ -3,9 +3,6 @@
 # Wait init-install.sh completed
 sleep 10
 
-# Configure Environmental Values
-source /etc/profile.d/init-env.sh
-
 # Up sshd-containers(=Pseudo target server)
 cd /tools
 echo "PUBLIC_KEY=\"$(cat ~/.ssh/test_key.pub)\"" > .env
