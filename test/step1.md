@@ -8,4 +8,4 @@
 
 以下の環境が構築されます。
 
-![](img/arch.drawio.svg)
+![](img/arch.png)
