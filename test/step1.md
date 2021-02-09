@@ -8,4 +8,4 @@
 
 以下の環境が構築されます。
 
-![](img/arch.png)
+![](https://raw.githubusercontent.com/sensq/katacoda-scenarios/main/test/img/arch.drawio.svg)
