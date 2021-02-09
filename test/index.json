@@ -29,7 +29,7 @@
       "host01": [
         { "file": "tools/*", "target": "~/"},
         { "file": "configs/*", "target": "~/"},
-        { "file": "configs/vscode_settings.json", "target": "/opt/.katacodacode/user-data/User/settings.json"},
+        { "file": "configs/vscode_settings.json", "target": "/opt/.katacodacode/user-data/User/"},
         { "file": "works/*", "target": "~/"}
       ]
     }
