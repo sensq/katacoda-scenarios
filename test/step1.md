@@ -5,3 +5,7 @@
 
 2. Ansibleが実行できることを確認します  
 `ansible -m ping -i inventory all`{{execute}}
+
+以下の環境が構築されます。
+
+![](img/arch.drawio.svg)
