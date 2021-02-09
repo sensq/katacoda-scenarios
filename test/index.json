@@ -30,7 +30,7 @@
         { "file": "tools/*", "target": "/"},
         { "file": "configs/*", "target": "/"},
         { "file": "configs/settings.json", "target": "/opt/.katacodacode/user-data/User/"},
-        { "file": "works/*", "target": "~/"}
+        { "file": "works/**/*", "target": "~/"}
       ]
     }
   },
