@@ -36,7 +36,12 @@
   },
   "environment": {
     "uilayout": "vscode-terminal-split",
-    "uieditorpath": "/root/works"
+    "uieditorpath": "/root/works",
+    "dashboards": [
+      { "name": "Target01 WebPage", "port": 8082 },
+      { "name": "Target02 WebPage", "port": 8083 },
+      { "name": "Target03 WebPage", "port": 8084 }
+    ]
   },
   "backend": {
     "imageid": "ubuntu:2004"
