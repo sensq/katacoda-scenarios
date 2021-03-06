@@ -1,0 +1,10 @@
+---
+- apk:
+    name: nginx
+
+- file:
+    path: /run/nginx
+    state: directory
+
+- shell: |
+    nginx
