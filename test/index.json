@@ -37,6 +37,7 @@
   "environment": {
     "uilayout": "vscode-terminal-split",
     "uieditorpath": "/root/works",
+    "showdashboard": true,
     "dashboards": [
       { "name": "Target01 WebPage", "port": 8082 },
       { "name": "Target02 WebPage", "port": 8083 },

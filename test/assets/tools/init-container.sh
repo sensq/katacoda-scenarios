@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo apk add python2
+sudo apk add python3
