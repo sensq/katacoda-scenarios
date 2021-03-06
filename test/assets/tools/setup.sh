@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Wait init-install.sh completed
-sleep 10
+while [ ! -e /completed ]
+do
+  sleep 2
+done
 
 # Up sshd-containers(=Pseudo target server)
 cd /tools
