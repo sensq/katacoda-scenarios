@@ -6,5 +6,25 @@
     path: /run/nginx
     state: directory
 
+- file:
+    path: /app
+    state: directory
+
+- name: copy
+  copy:
+    src: ./nginx.conf
+    dest: /etc/nginx/conf.d/default.conf
+  register: conf_copy
+
+- shell: |
+    ps aux | grep [n]ginx
+  register: nginx_process
+  changed_when: False
+
 - shell: |
     nginx
+  when: nginx_process.stdout == ""
+
+- shell: |
+    nginx -s reload
+  when: conf_copy | changed
