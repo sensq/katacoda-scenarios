@@ -3,3 +3,7 @@
   copy:
     src: ./copytestfile
     dest: /tmp
+  register: result
+
+- debug:
+    msg: "{{ result }}"

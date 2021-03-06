@@ -35,4 +35,4 @@
 
 - name: Nginxのコンフィグファイルを読み込む
   shell: nginx -s reload
-  when: conf_copy | changed
+  when: conf_copy.changed
