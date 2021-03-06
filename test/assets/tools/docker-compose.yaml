@@ -17,6 +17,8 @@ services:
       - USER_PASSWORD=password01 #optional
       - USER_PASSWORD_FILE=/path/to/file #optional
       - USER_NAME=hoge #optional
+    volumes:
+      - ./container-files/:/container-files
     ports:
       - 2222:2222
       - 8082:80
@@ -37,6 +39,8 @@ services:
       - USER_PASSWORD=password02 #optional
       - USER_PASSWORD_FILE=/path/to/file #optional
       - USER_NAME=foo #optional
+    volumes:
+      - ./container-files/:/container-files
     ports:
       - 2223:2222
       - 8083:80
@@ -57,6 +61,8 @@ services:
       - USER_PASSWORD=password03 #optional
       - USER_PASSWORD_FILE=/path/to/file #optional
       - USER_NAME=john #optional
+    volumes:
+      - ./container-files/:/container-files
     ports:
       - 2224:2222
       - 8084:80
