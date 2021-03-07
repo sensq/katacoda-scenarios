@@ -15,14 +15,18 @@
 
 - name: index.htmlを配置
   template:
-    src: ./index.html
+    src: ./templates/index.html.j2
     dest: /app/index.html
 
 - name: Nginxのコンフィグファイルを配置
   copy:
-    src: ./nginx.conf
+    src: ./files/nginx.conf
     dest: /etc/nginx/conf.d/default.conf
   register: conf_copy
+
+- name: デバッグ情報の表示
+  debug:
+    msg: "{{ conf_copy }}"
 
 - name: Nginxの稼働状態を確認
   shell: ps aux | grep nginx | grep -v grep | cat

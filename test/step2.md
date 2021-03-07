@@ -1,15 +1,30 @@
-# temp
+# KatacodaとLinuxの簡単な復習
 
-最初に`cd ~/works`に移動しておくこと。  
-`cd ~/works`{{execute}}
+KatacodaとLinuxの使い方について簡単に復習をします。
 
-## SSH接続
-`ssh target01 -i /root/.ssh/test_key`{{execute}}  
-`ssh target02 -i /root/.ssh/test_key`{{execute}}  
-
-## インベントリ確認
-`ansible-inventory -i inventory --list -y`{{execute}}
-
-## nginxインストール
-`ansible-playbook -i inventory site_nginx.yaml`{{execute}}
-
+1. テキストに記載されているコマンドを実行する  
+   以下のコマンドをクリックしてください。  
+   `echo Success`{{execute}}  
+   画面右下のコンソールに`Success`という文字列が出力されます。
+2. コンソールでコマンドを実行する  
+   画面右下のコンソールに`pwd`と入力し、実行してください。  
+   `/root/works`という文字列が出力されます。
+3. ファイルを作成する  
+   以下のコマンドをクリックしてください。  
+   `echo "test" > ~/test_file`{{execute}}  
+   右上のエディタ上に`test_file`というファイルが作成されます。
+4. ファイルの中身を確認する  
+   以下のコマンドをクリックしてください。  
+   `cat ~/test_file`{{execute}}  
+   コンソールに`test_file`ファイルの中身が出力されます。
+5. ファイルを編集する  
+   一般的には`vi`を使用して編集しますが、本演習では基本的に右上のエディタを使用します。  
+   右上のエディタに`test_file`というファイルが作られているはずなので、これをクリックして開いてください。  
+   ファイルの中に`test`と書かれているはずなので、適当に内容を書き換えてください。  
+   `Ctrl+S`でファイルを保存し、以下のコマンドをクリックしてください。  
+   `cat ~/test_file`{{execute}}  
+   コンソールに`test_file`ファイルの中身が出力されます。
+6. ファイルを削除する  
+   以下のコマンドをクリックしてください。  
+   `rm -f ~/test_file`{{execute}}  
+   `test_file`ファイルが削除されます。エディタ上からもファイル名が消えていることが確認できます。
