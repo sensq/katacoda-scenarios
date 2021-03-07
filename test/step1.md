@@ -1,11 +1,11 @@
 # 環境を準備する
 
-> :warning: 注意
+> ⚠️ 注意
 > この手順は接続するたびに最初に実行する必要があります。
 > 画面更新や再アクセスした際は実行し忘れないようにしてください。
 
 1. 以下のコマンドを実行します  
-`bash /tools/setup.sh && source /etc/profile.d/init-env.sh && cd ~/works`{{execute}}
+`bash /tools/setup.sh && source /etc/profile.d/init-env.sh`{{execute}}
 
 2. カレントディレクトリを`~/works`に変更します  
 `cd ~/works`{{execute}}  
