@@ -3,4 +3,3 @@
   copy:
     src: ./files/copytestfile
     dest: /tmp
-  register: result
