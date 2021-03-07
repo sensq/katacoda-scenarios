@@ -32,6 +32,6 @@
 
 ![](https://raw.githubusercontent.com/sensq/katacoda-scenarios/main/test/img/playbook.drawio.svg)
 
-> :warning:  注意点
+> ⚠️ 注意点
 > 今回のサンプルPlaybookはシンプルな作りのため、ファイル数の非常に少ない構成となっています。
 > より実践的な使い方をする場合は、変数定義用のファイルを配置するディレクトリなど、他にもいくつかのディレクトリを作成します。
