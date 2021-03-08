@@ -8,7 +8,14 @@
 > コマンドを実行する際は、直前に実行したコマンドが完了したのを確認してから実行してください。  
 
 1. 以下のコマンドを実行します  
-`bash /tools/setup.sh && source /etc/profile.d/init-env.sh`{{execute}}
+
+```bash
+while [ ! -e /tools/setup.sh ]
+do
+  sleep 1
+done
+bash /tools/setup.sh && source /etc/profile.d/init-env.sh
+```{{execute}}
 
 2. カレントディレクトリを`~/works`に変更します  
 `cd ~/works`{{execute}}  
