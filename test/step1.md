@@ -9,13 +9,13 @@
 
 1. 以下のコマンドを実行します  
 
-```bash
+    ```bash
 while [ ! -e /tools/setup.sh ]
 do
   sleep 1
 done
 bash /tools/setup.sh && source /etc/profile.d/init-env.sh
-```{{execute}}
+    ```{{execute}}
 
 2. カレントディレクトリを`~/works`に変更します  
 `cd ~/works`{{execute}}  
