@@ -1,6 +1,56 @@
 # インベントリにターゲットを追加する
 
-未作成
+インベントリファイルに3号機の情報を追加してWebサーバ構築のPlaybookを再実行します。
 
-インベントリに3号機を追加してPlaybook再実行し、3号機にアクセス可能になることを確認する。  
-また、1号機と2号機は`changed`が1つも出ないことを確認する。
+## インベントリへの追加
+
+インベントリファイル（`~/works/inventory`）をエディタで開き、`target01`, `target02`を参考にして`target03`を追加してください。  
+`target03`として記載する内容は以下になります。クリックするとコピーできるようになっています。  
+<kbd>Ctrl</kbd>+<kbd>S</kbd>でファイル保存するのを忘れないようにご注意ください。
+
+```
+    target03:
+      vars:
+        ansible_port: 2224
+        ansible_user: john
+```{{copy}}
+
+ファイルを保存したら以下のコマンドでインベントリファイルを確認します。
+
+`ansible-inventory -i inventory --list -y`{{execute}}
+
+以下の出力がされたらインベントリファイルへの追加は完了です。  
+インデント（スペースの個数）が大事になるため、以下と同じ出力にならない場合は同じになるように編集し直してください。
+
+```
+all:
+  hosts:
+    target01:
+      vars:  # hostごとの変数
+        ansible_port: 2222
+        ansible_user: hoge
+    target02:
+      vars:  # hostごとの変数
+        ansible_port: 2223
+        ansible_user: foo
+    target03:
+      vars:
+        ansible_port: 2224
+        ansible_user: john
+  vars:  # 共通の変数
+    ansible_ssh_private_key_file: ~/.ssh/test_key
+```
+
+## Playbookの再実行
+
+以下のコマンドを実行してください。  
+`ansible-playbook -i inventory playbook_nginx.yaml`{{execute}}
+
+実行が完了したら、先程と同様に3号機のページへアクセスしてページが表示されることを確認します。
+
+1. コンソール上部にある「`Target03 WebPage`」をクリック
+2. 「It works!」と記載されたページが表示されることを確認し、ウィンドウ（またはタブ）を閉じる
+
+なお、Playbookの再実行で1号機と2号機はすべて`ok`または`skipping`となっており、`changed`が1つも発生していないことが確認できるかと思います。  
+これがAnsibleに特徴的な「**冪等性**（べきとうせい）」と呼ばれる性質であり、「すでに定義通りの状態になっていたら何もしない」ことを表しています。
+
