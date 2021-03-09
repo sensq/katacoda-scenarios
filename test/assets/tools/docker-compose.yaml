@@ -4,7 +4,7 @@ services:
   target-server-01:
     image: ghcr.io/linuxserver/openssh-server
     container_name: target-server-01
-    hostname: openssh-server #optional
+    hostname: target-server-01 #optional
     environment:
       - PUID=1000
       - PGID=1000
@@ -23,7 +23,7 @@ services:
   target-server-02:
     image: ghcr.io/linuxserver/openssh-server
     container_name: target-server-02
-    hostname: openssh-server #optional
+    hostname: target-server-02 #optional
     environment:
       - PUID=1000
       - PGID=1000
@@ -42,7 +42,7 @@ services:
   target-server-03:
     image: ghcr.io/linuxserver/openssh-server
     container_name: target-server-03
-    hostname: openssh-server #optional
+    hostname: target-server-03 #optional
     environment:
       - PUID=1000
       - PGID=1000
