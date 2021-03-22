@@ -15,14 +15,14 @@ copyモジュールを使ったPlaybookを作る。
 
 ## タスクの作成
 
-1. `roles/kadai-2/tasks/hoge.yaml`に以下をコピペ
+`roles/kadai-2/tasks/hoge.yaml`に以下をコピペ
 
 ```yaml
 
 ```{{copy}}
 
 
-2. `roles/kadai-2/tasks/main.yaml`に以下をコピペ
+`roles/kadai-2/tasks/main.yaml`に以下をコピペ
 
 ```yaml
 - include: hoge.yaml

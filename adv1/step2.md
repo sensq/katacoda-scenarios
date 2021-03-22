@@ -28,7 +28,8 @@ bash /tools/setup.sh && source /etc/profile.d/init-env.sh
 `ansible-playbook -i inventory playbook_sample.yaml`{{execute}}
 
 5. Katacodaの不具合対策として、以下のコマンドを実行します  
-`yes | head -100`{{execute}}
+`yes | head -100`{{execute}}  
+実行後にコンソールを一番下までスクロールしておきます。
 
 以下の環境が構築されます。
 

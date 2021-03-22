@@ -15,7 +15,7 @@ fetchモジュールを使ったPlaybookを作る。
 
 ## タスクの作成
 
-1. `roles/kadai-1/tasks/fetch.yaml`に以下をコピペ
+`roles/kadai-1/tasks/fetch.yaml`に以下をコピペ
 
 ```yaml
 - name: fetch 「/etc/passwd」
@@ -26,7 +26,7 @@ fetchモジュールを使ったPlaybookを作る。
 ```{{copy}}
 
 
-2. `roles/kadai-1/tasks/main.yaml`に以下をコピペ
+`roles/kadai-1/tasks/main.yaml`に以下をコピペ
 
 ```yaml
 - include: fetch.yaml
@@ -36,3 +36,10 @@ fetchモジュールを使ったPlaybookを作る。
 ## Playbookを実行
 
 `ansible-playbook -i inventory playbook_kadai-1.yaml`{{execute}}
+
+## 取得したファイルの確認
+
+エディタ上の以下の位置にある更新ボタンを押すと、`works`ディレクトリ直下に`kadai-1_fetch_files`というディレクトリが表示されます。  
+その中に各ターゲットサーバごとの`/etc/passwd`ファイルが取得されているのを確認してください。
+
+![](https://raw.githubusercontent.com/sensq/katacoda-scenarios/main/adv1/img/refresh.png)

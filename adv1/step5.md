@@ -15,14 +15,14 @@ templateモジュールを使ったPlaybookを作る。
 
 ## タスクの作成
 
-1. `roles/kadai-3/tasks/hoge.yaml`に以下をコピペ
+`roles/kadai-3/tasks/hoge.yaml`に以下をコピペ
 
 ```yaml
 
 ```{{copy}}
 
 
-2. `roles/kadai-3/tasks/main.yaml`に以下をコピペ
+`roles/kadai-3/tasks/main.yaml`に以下をコピペ
 
 ```yaml
 - include: hoge.yaml

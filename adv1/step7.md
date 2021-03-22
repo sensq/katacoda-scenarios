@@ -15,14 +15,14 @@ whenを使って特定の場合にだけfetchを実行するPlaybookを作る。
 
 ## タスクの作成
 
-1. `roles/kadai-5/tasks/hoge.yaml`に以下をコピペ
+`roles/kadai-5/tasks/hoge.yaml`に以下をコピペ
 
 ```yaml
 
 ```{{copy}}
 
 
-2. `roles/kadai-5/tasks/main.yaml`に以下をコピペ
+`roles/kadai-5/tasks/main.yaml`に以下をコピペ
 
 ```yaml
 - include: hoge.yaml
