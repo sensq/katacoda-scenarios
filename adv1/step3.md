@@ -39,7 +39,9 @@ fetchモジュールを使ったPlaybookを作る。
 
 ## 取得したファイルの確認
 
-エディタ上の以下の位置にある更新ボタンを押すと、`works`ディレクトリ直下に`kadai-1_fetch_files`というディレクトリが表示されます。  
-その中に各ターゲットサーバごとの`/etc/passwd`ファイルが取得されているのを確認してください。
+Playbookを実行すると、`works`ディレクトリ直下に`kadai-1_fetch_files`というディレクトリが表示されます。  
+その中に各ターゲットサーバごとの`/etc/passwd`ファイルが取得されているのを確認してください。  
+
+※ディレクトリが表示されない場合は、エディタ上の以下の位置にある更新ボタンを押してください。
 
 ![](https://raw.githubusercontent.com/sensq/katacoda-scenarios/main/adv1/img/refresh.png)
