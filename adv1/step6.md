@@ -1,0 +1,3 @@
+# ループを使う
+
+fetchモジュールにwith_items使って複数ファイル取得するPlaybookを作る
