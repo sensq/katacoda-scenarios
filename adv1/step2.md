@@ -27,6 +27,9 @@ bash /tools/setup.sh && source /etc/profile.d/init-env.sh
 4. サンプルのPlaybookが実行できることを確認します  
 `ansible-playbook -i inventory playbook_sample.yaml`{{execute}}
 
+5. Katacodaの不具合対策として、以下のコマンドを実行します  
+`yes | head -100`{{execute}}
+
 以下の環境が構築されます。
 
 ![](https://raw.githubusercontent.com/sensq/katacoda-scenarios/main/test/img/arch.drawio.svg)
