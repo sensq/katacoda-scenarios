@@ -33,6 +33,7 @@ all:
       fetch_files:
         - /etc/group
         - /etc/profile
+        - /proc/cpuinfo
   vars:  # 共通の変数
     ansible_ssh_private_key_file: ~/.ssh/test_key
 ```{{copy}}
@@ -42,9 +43,9 @@ all:
 `roles/kadai-4/tasks/loop.yaml`に以下をコピペ
 
 ```yaml
-- name: fetch 「/etc/passwd」
+- name: fetch files
   fetch:
-    src: /etc/passwd
+    src: "{{ item }}"
     dest: ./kadai-4_fetch_files/
   loop: "{{ fetch_files }}"
 ```{{copy}}
@@ -63,7 +64,7 @@ all:
 ## 5. 配置したファイルの確認
 
 Playbookを実行すると、`works`ディレクトリ直下に`kadai-4_fetch_files`というディレクトリが表示されます。  
-その中に各ターゲットサーバごとの`/etc/passwd`ファイルが取得されているのを確認してください。  
+その中に各ターゲットサーバごとの変数に記載したパスのファイルが取得されているのを確認してください。  
 
 ※ディレクトリが表示されない場合は、エディタ上の以下の位置にある更新ボタンを押してください。
 
