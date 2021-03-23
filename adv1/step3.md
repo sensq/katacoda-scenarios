@@ -10,7 +10,6 @@ fetchモジュールを使ったPlaybookを作る。
 - hosts: all
   roles:
     - kadai-1
-
 ```{{copy}}
 
 ## 2. タスクの作成
@@ -22,7 +21,6 @@ fetchモジュールを使ったPlaybookを作る。
   fetch:
     src: /etc/passwd
     dest: ./kadai-1_fetch_files/
-
 ```{{copy}}
 
 
@@ -30,7 +28,6 @@ fetchモジュールを使ったPlaybookを作る。
 
 ```yaml
 - include: fetch.yaml
-
 ```{{copy}}
 
 ## 3. Playbookを実行

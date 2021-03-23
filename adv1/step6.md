@@ -10,12 +10,11 @@ fetchモジュールにwith_items使って複数ファイル取得するPlaybook
 - hosts: all
   roles:
     - kadai-4
-
 ```{{copy}}
 
 ## 2. タスクの作成
 
-`roles/kadai-4/tasks/hoge.yaml`に以下をコピペ
+`roles/kadai-4/tasks/loop.yaml`に以下をコピペ
 
 ```yaml
 
@@ -25,8 +24,7 @@ fetchモジュールにwith_items使って複数ファイル取得するPlaybook
 `roles/kadai-4/tasks/main.yaml`に以下をコピペ
 
 ```yaml
-- include: hoge.yaml
-
+- include: loop.yaml
 ```{{copy}}
 
 ## 3. Playbookを実行

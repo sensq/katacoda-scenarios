@@ -10,12 +10,11 @@ copyモジュールを使ったPlaybookを作る。
 - hosts: all
   roles:
     - kadai-2
-
 ```{{copy}}
 
 ## 2. タスクの作成
 
-`roles/kadai-2/tasks/hoge.yaml`に以下をコピペ
+`roles/kadai-2/tasks/copy.yaml`に以下をコピペ
 
 ```yaml
 
@@ -25,8 +24,7 @@ copyモジュールを使ったPlaybookを作る。
 `roles/kadai-2/tasks/main.yaml`に以下をコピペ
 
 ```yaml
-- include: hoge.yaml
-
+- include: copy.yaml
 ```{{copy}}
 
 ## 3. Playbookを実行

@@ -10,12 +10,11 @@ templateモジュールを使ったPlaybookを作る。
 - hosts: all
   roles:
     - kadai-3
-
 ```{{copy}}
 
 ## 2. タスクの作成
 
-`roles/kadai-3/tasks/hoge.yaml`に以下をコピペ
+`roles/kadai-3/tasks/template.yaml`に以下をコピペ
 
 ```yaml
 
@@ -25,8 +24,7 @@ templateモジュールを使ったPlaybookを作る。
 `roles/kadai-3/tasks/main.yaml`に以下をコピペ
 
 ```yaml
-- include: hoge.yaml
-
+- include: template.yaml
 ```{{copy}}
 
 ## 3. Playbookを実行

@@ -11,12 +11,11 @@ register, when, changed_whenあたりを使って特定の場合にだけfetch�
 - hosts: all
   roles:
     - kadai-6
-
 ```{{copy}}
 
 ## 2. タスクの作成
 
-`roles/kadai-6/tasks/hoge.yaml`に以下をコピペ
+`roles/kadai-6/tasks/shell.yaml`に以下をコピペ
 
 ```yaml
 
@@ -26,8 +25,7 @@ register, when, changed_whenあたりを使って特定の場合にだけfetch�
 `roles/kadai-6/tasks/main.yaml`に以下をコピペ
 
 ```yaml
-- include: hoge.yaml
-
+- include: shell.yaml
 ```{{copy}}
 
 ## 3. Playbookを実行

@@ -10,12 +10,11 @@ whenを使って特定の場合にだけfetchを実行するPlaybookを作る。
 - hosts: all
   roles:
     - kadai-5
-
 ```{{copy}}
 
 ## 2. タスクの作成
 
-`roles/kadai-5/tasks/hoge.yaml`に以下をコピペ
+`roles/kadai-5/tasks/when.yaml`に以下をコピペ
 
 ```yaml
 
@@ -25,8 +24,7 @@ whenを使って特定の場合にだけfetchを実行するPlaybookを作る。
 `roles/kadai-5/tasks/main.yaml`に以下をコピペ
 
 ```yaml
-- include: hoge.yaml
-
+- include: when.yaml
 ```{{copy}}
 
 ## 3. Playbookを実行
