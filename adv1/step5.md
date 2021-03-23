@@ -12,17 +12,37 @@ templateモジュールを使ったPlaybookを作る。
     - kadai-3
 ```{{copy}}
 
-## 2. ターゲットサーバへ配置するファイルの作成
+## 2. インベントリファイルに変数を定義
+
+`works`ディレクトリ直下の`inventory`ファイルに以下をコピペ
+
+```yaml
+all:
+  hosts:
+    target01:  # hostごとの変数
+      ansible_port: 2222
+      ansible_user: hoge
+      server_location: 新宿
+    target02:  # hostごとの変数
+      ansible_port: 2223
+      ansible_user: foo
+      server_location: 豊洲
+  vars:  # 共通の変数
+    ansible_ssh_private_key_file: ~/.ssh/test_key
+```{{copy}}
+
+## 3. ターゲットサーバへ配置するファイルの作成
 
 `roles/kadai-2/templates/template_file.j2`に以下をコピペ
 
-```yaml
+```text
 ターゲットサーバに配置されるファイルです。
-このサーバのホスト名は「{{ tbd }}」です。
+このサーバのホスト名は「{{ ansible_hostname }}」です。
+このサーバは「{{ server_location }}」に設置されています。
 Ansible実行後にターゲットサーバに配置されていることを確認してください。
-```
+```{{copy}}
 
-## 3. タスクの作成
+## 4. タスクの作成
 
 `roles/kadai-3/tasks/template.yaml`に以下をコピペ
 
@@ -30,7 +50,7 @@ Ansible実行後にターゲットサーバに配置されていることを確�
 - name: template file
   template:
     src: ./templates/template_file.j2
-    dest: /tmp
+    dest: /tmp/template_file
 ```{{copy}}
 
 
@@ -40,11 +60,11 @@ Ansible実行後にターゲットサーバに配置されていることを確�
 - include: template.yaml
 ```{{copy}}
 
-## 4. Playbookを実行
+## 5. Playbookを実行
 
 `ansible-playbook -i inventory playbook_kadai-3.yaml`{{execute}}
 
-## 5. 配置したファイルの確認
+## 6. 配置したファイルの確認
 
 各ターゲットサーバへSSH接続し、`/tmp`ディレクトリに`template_file`というファイルが配置されていることを確認します。  
 また、ファイルの中身が各サーバごとに異なっていることも確認します。  

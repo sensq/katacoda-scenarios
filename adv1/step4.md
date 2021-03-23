@@ -16,10 +16,10 @@ copyモジュールを使ったPlaybookを作る。
 
 `roles/kadai-2/files/copy_file`に以下をコピペ
 
-```yaml
+```text
 ターゲットサーバに配置されるファイルです。
 Ansible実行後にターゲットサーバに配置されていることを確認してください。
-```
+```{{copy}}
 
 ## 3. タスクの作成
 
@@ -29,7 +29,7 @@ Ansible実行後にターゲットサーバに配置されていることを確�
 - name: copy file
   copy:
     src: ./files/copy_file
-    dest: /tmp
+    dest: /tmp/copy_file
 ```{{copy}}
 
 
