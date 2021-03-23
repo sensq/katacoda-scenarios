@@ -2,7 +2,7 @@
 
 copyモジュールを使ったPlaybookを作る。
 
-## Playbookの作成
+## 1. Playbookの作成
 
 `playbook_kadai-2.yaml`に以下をコピペ
 
@@ -13,7 +13,7 @@ copyモジュールを使ったPlaybookを作る。
 
 ```{{copy}}
 
-## タスクの作成
+## 2. タスクの作成
 
 `roles/kadai-2/tasks/hoge.yaml`に以下をコピペ
 
@@ -29,6 +29,6 @@ copyモジュールを使ったPlaybookを作る。
 
 ```{{copy}}
 
-## Playbookを実行
+## 3. Playbookを実行
 
 `ansible-playbook -i inventory playbook_kadai-2.yaml`{{execute}}

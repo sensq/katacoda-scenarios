@@ -2,7 +2,7 @@
 
 fetchモジュールにwith_items使って複数ファイル取得するPlaybookを作る。
 
-## Playbookの作成
+## 1. Playbookの作成
 
 `playbook_kadai-4.yaml`に以下をコピペ
 
@@ -13,7 +13,7 @@ fetchモジュールにwith_items使って複数ファイル取得するPlaybook
 
 ```{{copy}}
 
-## タスクの作成
+## 2. タスクの作成
 
 `roles/kadai-4/tasks/hoge.yaml`に以下をコピペ
 
@@ -29,6 +29,6 @@ fetchモジュールにwith_items使って複数ファイル取得するPlaybook
 
 ```{{copy}}
 
-## Playbookを実行
+## 3. Playbookを実行
 
 `ansible-playbook -i inventory playbook_kadai-4.yaml`{{execute}}

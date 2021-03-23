@@ -3,7 +3,7 @@
 エラーハンドリングとシェルスクリプト  
 register, when, changed_whenあたりを使って特定の場合にだけfetchを実行するPlaybookを作る。
 
-## Playbookの作成
+## 1. Playbookの作成
 
 `playbook_kadai-6.yaml`に以下をコピペ
 
@@ -14,7 +14,7 @@ register, when, changed_whenあたりを使って特定の場合にだけfetch�
 
 ```{{copy}}
 
-## タスクの作成
+## 2. タスクの作成
 
 `roles/kadai-6/tasks/hoge.yaml`に以下をコピペ
 
@@ -30,6 +30,6 @@ register, when, changed_whenあたりを使って特定の場合にだけfetch�
 
 ```{{copy}}
 
-## Playbookを実行
+## 3. Playbookを実行
 
 `ansible-playbook -i inventory playbook_kadai-6.yaml`{{execute}}
