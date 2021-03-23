@@ -61,7 +61,7 @@ all:
 
 `ansible-playbook -i inventory playbook_kadai-4.yaml`{{execute}}
 
-## 5. 配置したファイルの確認
+## 5. 取得したファイルの確認
 
 Playbookを実行すると、`works`ディレクトリ直下に`kadai-4_fetch_files`というディレクトリが表示されます。  
 その中に各ターゲットサーバごとの変数に記載したパスのファイルが取得されているのを確認してください。  
