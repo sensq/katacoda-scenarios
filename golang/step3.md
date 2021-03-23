@@ -30,4 +30,4 @@ func main() {
 
 ```bash
 go run hello.go
-```{{execute}}
+```{{copy}}
