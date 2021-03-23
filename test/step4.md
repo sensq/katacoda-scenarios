@@ -1,6 +1,6 @@
 # サンプルのPlaybookを実行する
 
-## インベントリ確認
+## 1. インベントリ確認
 
 インベントリファイルの確認方法を学びます。  
 現時点では、中身の内容を理解しなくても問題ありません。
@@ -10,7 +10,7 @@
 2. `ansible-inventory`コマンドでもインベントリを確認できることを確認します  
 `ansible-inventory -i inventory --list -y`{{execute}}
 
-## Ansibleの設定ファイル確認
+## 2. Ansibleの設定ファイル確認
 
 Ansibleの設定ファイルの確認方法を学びます。  
 現時点では、中身の内容を理解しなくても問題ありません。
@@ -20,7 +20,7 @@ Ansibleの設定ファイルの確認方法を学びます。
 2. `ansible-config view`コマンドでもインベントリを確認できることを確認します  
 `ansible-config view`{{execute}}
 
-## サンプルのPlaybookを実行する
+## 3. サンプルのPlaybookを実行する
 
 Playbookを実行する方法について学びます。  
 現時点では、Playbookの中身を理解しなくても問題ありません。

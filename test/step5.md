@@ -3,13 +3,13 @@
 どのような流れで処理が実行されているのかを確認していきます。  
 テキストには便宜上`cat`コマンドで確認する手順のみ記載していますが、エディタ上でも確認してみてください。
 
-## Playbookの確認
+## 1. Playbookの確認
 
 `cat playbook_sample.yaml`{{execute}}
 
 インベントリに記載されているホストすべてに`common`ロールを実行するPlaybookであることがわかります。
 
-## Roleの確認
+## 2. Roleの確認
 
 上記で確認した`common`ロールの中身を確認していきます。
 まずは`main.yaml`を確認してください。
@@ -24,7 +24,7 @@
 このファイルには`copy`モジュールのタスクが定義されており、`files/copytestfile`ファイルをターゲットの`/tmp`へ配置していることがわかります。  
 `main.yaml`で`include`しているのはこのファイルのみのため、このロールで実行される処理は上記のみであることがわかります。
 
-## Playbookの構成まとめ
+## 3. Playbookの構成まとめ
 
 以上より、サンプルのPlaybook実行に関するディレクトリ構成をシンプルに図でまとめると以下のように表せます。  
 この構成はAnsible公式でも[ベストプラクティス構成](https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_best_practices.html#directory-layout)として紹介されており、

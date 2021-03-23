@@ -32,5 +32,8 @@ bash /tools/setup.sh && source /etc/profile.d/init-env.sh
 SSHから抜ける際は`exit`コマンドを実行すると元のコンソールへ戻ることができます。
 
 1号機: `ssh target01 -i /root/.ssh/test_key`{{execute}}  
+`exit`{{execute}}  
 2号機: `ssh target02 -i /root/.ssh/test_key`{{execute}}  
+`exit`{{execute}}  
 3号機: `ssh target03 -i /root/.ssh/test_key`{{execute}}  
+`exit`{{execute}}  
