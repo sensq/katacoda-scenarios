@@ -157,13 +157,14 @@ package main
 import "fmt"
 
 func main() {
-	m := map[string]int{"国語": 85, "数学": 78, "英語": 80}
-	fmt.Println(m)
-	for i, v := range m {
-		fmt.Println(i, v)
-	}
-	fmt.Println("英語の得点は、")
-	fmt.Println(m["英語"])
+    m := map[string]int{"国語": 85, "数学": 78, "英語": 80}
+    fmt.Println(m)
+    for key, value := range m {
+        fmt.Println(key, value)
+    }
+    fmt.Print("英語の得点は、")
+    fmt.Print(m["英語"])
+    fmt.Println("点です。")
 }
 ```{{copy}}
 
@@ -178,9 +179,8 @@ go run map.go
 ```text
 $ go run map.go
 map[国語:85 数学:78 英語:80]
-英語 80
 国語 85
 数学 78
-英語の得点は、
-80
+英語 80
+英語の得点は、80点です。
 ```
