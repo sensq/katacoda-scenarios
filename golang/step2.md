@@ -16,7 +16,14 @@ KatacodaのVSCodeにはアドオンを入れられないが、ローカルで試
 
 ## コード
 
-`hello.go`に以下をコピペする。
+`hello.go`ファイルを作成する。
+
+```bash
+touch hello.go
+```{{execute}}
+
+`hello.go`に以下をコピペする。  
+※クリックでコピーできます。
 
 ```go
 package main
@@ -24,7 +31,7 @@ import "fmt"
 func main() {
     fmt.Println("hello world")
 }
-```
+```{{copy}}
 
 ## 実行
 
