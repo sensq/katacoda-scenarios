@@ -23,21 +23,12 @@ Ansible実行後にターゲットサーバに配置されていることを確�
 
 ## 3. タスクの作成
 
-`roles/kadai-2/tasks/copy.yaml`に以下をコピペ
+[Ansibleの公式ドキュメント]の[copyモジュール]を参考に、`roles/kadai-2/tasks/copy.yaml`へタスクを作成する。  
+実装の要件は以下の通り
 
-```yaml
-- name: copy file
-  copy:
-    src: ./files/copy_file
-    dest: /tmp/copy_file
-```{{copy}}
-
-
-`roles/kadai-2/tasks/main.yaml`に以下をコピペ
-
-```yaml
-- include: copy.yaml
-```{{copy}}
+* `copy`モジュールを使うこと
+* 2で作成した`roles/kadai-2/files/copy_file`をターゲットサーバの`/tmp/copy_file`へ配置すること
+* `roles/kadai-2/tasks/main.yaml`に`copy.yaml`を読み込む記述を行うこと
 
 ## 4. Playbookを実行
 
