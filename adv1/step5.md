@@ -14,6 +14,13 @@ templateモジュールを使ったPlaybookを作る。
 
 ## 2. インベントリファイルに変数を定義
 
+Ansibleでの変数定義の方法はいくつかあり、一般的にはhost_varsやgroup_varsといったものがよく使われれる。  
+ただし、今回は演習の進行の都合上、インベントリファイルに記載する方法で定義する。
+
+⚠️  
+この方法はシンプルではあるが、ターゲットサーバや変数が多くなるとインベントリファイルが肥大化して見通しが悪くなるデメリットなどがある。  
+実際にAnsibleを使う際はどのように変数定義を行って管理していくかなどのルールも決めておく必要があることを理解しておくとよい。
+
 `works`ディレクトリ直下の`inventory`ファイルに以下をコピペ
 
 ```yaml
@@ -44,21 +51,14 @@ Ansible実行後にターゲットサーバに配置されていることを確�
 
 ## 4. タスクの作成
 
-`roles/kadai-3/tasks/template.yaml`に以下をコピペ
+[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[templateモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/template_module.html)を参考に、`roles/kadai-3/tasks/template.yaml`へタスクを作成する。  
+実装の要件は以下の通り
 
-```yaml
-- name: template file
-  template:
-    src: ./templates/template_file.j2
-    dest: /tmp/template_file
-```{{copy}}
+* `template`モジュールを使うこと
+* 2で作成した`roles/kadai-2/templates/template_file.j2`をターゲットサーバの`/tmp/template_file`へ配置すること
+* `roles/kadai-2/tasks/main.yaml`に`template.yaml`を読み込む記述を行うこと
 
-
-`roles/kadai-3/tasks/main.yaml`に以下をコピペ
-
-```yaml
-- include: template.yaml
-```{{copy}}
+回答例は次のページに記載しているが、どうしても上手くいかない場合にだけ参考にすること。
 
 ## 5. Playbookを実行
 
