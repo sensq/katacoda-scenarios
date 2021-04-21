@@ -40,7 +40,7 @@ all:
 
 ## 3. ターゲットサーバへ配置するファイルの作成
 
-`roles/kadai-2/templates/template_file.j2`に以下をコピペ
+`roles/kadai-3/templates/template_file.j2`に以下をコピペ
 
 ```text
 ターゲットサーバに配置されるファイルです。
@@ -55,8 +55,8 @@ Ansible実行後にターゲットサーバに配置されていることを確�
 実装の要件は以下の通り
 
 * `template`モジュールを使うこと
-* 2で作成した`roles/kadai-2/templates/template_file.j2`をターゲットサーバの`/tmp/template_file`へ配置すること
-* `roles/kadai-2/tasks/main.yaml`に`template.yaml`を読み込む記述を行うこと
+* 2で作成した`roles/kadai-3/templates/template_file.j2`をターゲットサーバの`/tmp/template_file`へ配置すること
+* `roles/kadai-3/tasks/main.yaml`に`template.yaml`を読み込む記述を行うこと
 
 回答例は次のページに記載しているが、どうしても上手くいかない場合にだけ参考にすること。
 

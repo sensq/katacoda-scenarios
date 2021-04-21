@@ -38,24 +38,25 @@ all:
     ansible_ssh_private_key_file: ~/.ssh/test_key
 ```{{copy}}
 
+⚠️：配列とマップについて  
+上記ファイルの8-9行目と15-17行目の値には変数名を付けておらず、代わりにハイフンのみを記載している。  
+これは一般的なプログラミング言語でも頻繁に使われる「配列」と呼ばれるデータ型であり、なんらかの共通の意味を持った複数の値をまとめて扱いたい場合などに利用されることが多い。  
+一方で、その他の値は「マップ」と呼ばれるKey-Value形式のデータ型で定義されている（ハッシュ、連想配列などとも言われる）  
+マップは構造を持ったデータ型であり、多くのデータをわかりやすくて参照しやすい表現方法で定義できるというメリットがある。  
+また、配列とマップは複合的に定義することが可能であるため、上記のようにマップの中に配列を定義することも、マップを配列で複数定義することも可能である。  
+例えば上記ファイルの16行目は`all.hosts.target02.fetch_files[1]`のように指定すれば`/etc/profile`という値を参照することができる。
+
 ## 3. タスクの作成
 
-`roles/kadai-4/tasks/loop.yaml`に以下をコピペ
+[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[fetchモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html#fetch-module)と[ループ](https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_loops.html)を参考に、`roles/kadai-4/tasks/loop.yaml`へタスクを作成する。  
+実装の要件は以下の通り
 
-```yaml
-- name: fetch files
-  fetch:
-    src: "{{ item }}"
-    dest: ./kadai-4_fetch_files/
-  loop: "{{ fetch_files }}"
-```{{copy}}
+* `fetch`モジュールを使うこと
+* `fetch_files`変数に定義したパスのファイルをループを使ってすべて取得すること
+* 取得したファイルは`works`ディレクトリ直下の`kadai-4_fetch_files`というディレクトリに配置すること
+* `roles/kadai-4/tasks/main.yaml`に`loop.yaml`を読み込む記述を行うこと
 
-
-`roles/kadai-4/tasks/main.yaml`に以下をコピペ
-
-```yaml
-- include: loop.yaml
-```{{copy}}
+回答例は次のページに記載しているが、どうしても上手くいかない場合にだけ参考にすること。
 
 ## 4. Playbookを実行
 
