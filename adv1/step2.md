@@ -36,7 +36,9 @@ bash /tools/setup.sh && source /etc/profile.d/init-env.sh
 ![](https://raw.githubusercontent.com/sensq/katacoda-scenarios/main/test/img/arch.drawio.svg)
 
 各ターゲットへSSHで接続する際は、以下のコマンドを実行してください。  
-SSHから抜ける際は`exit`コマンドを実行すると元のコンソールへ戻ることができます。
+SSHから抜ける際は`exit`コマンドを実行すると元のコンソールへ戻ることができます。  
+なお、本演習では基本的に1号機と2号機しか使用しません。  
+3号機も環境として存在はしているため、個人的に試してみたいことがあれば自由にご利用ください。
 
 1号機: `ssh target01 -i /root/.ssh/test_key`{{execute}}  
 `exit`{{execute}}  

@@ -39,3 +39,22 @@ services:
       - 2223:2222
       - 8083:80
     restart: unless-stopped
+  target-server-03:
+    image: ghcr.io/linuxserver/openssh-server
+    container_name: target-server-03
+    hostname: target-server-03 #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Tokyo
+      - PUBLIC_KEY=${PUBLIC_KEY} #optional
+      - PUBLIC_KEY_FILE=/path/to/file #optional
+      - PUBLIC_KEY_DIR=/path/to/directory/containing/_only_/pubkeys #optional
+      - SUDO_ACCESS=true #optional
+      - USER_NAME=john #optional
+    volumes:
+      - ./container-files:/container-files
+    ports:
+      - 2224:2222
+      - 8084:80
+    restart: unless-stopped
