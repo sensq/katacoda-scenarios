@@ -1,6 +1,6 @@
 # 課題6-2-回答: モジュールに存在しない処理の冪等性を考える
 
-`roles/kadai-6/tasks/shell.yaml`
+`roles/kadai-6-2/tasks/shell.yaml`
 
 ```yaml
 - name: checkfileにtestが書かれていることの確認（書かれていたら1が出力される）
