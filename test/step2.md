@@ -13,23 +13,23 @@ KatacodaとLinuxの使い方について簡単に復習をします。
 
 3. ファイルを作成する  
    以下のコマンドをクリックしてください。  
-   `echo "test" > ~/test_file`{{execute}}  
+   `echo "test" > ~/works/test_file`{{execute}}  
    右上のエディタ上に`test_file`というファイルが作成されます。
 
 4. ファイルの中身を確認する  
    以下のコマンドをクリックしてください。  
-   `cat ~/test_file`{{execute}}  
+   `cat ~/works/test_file`{{execute}}  
    コンソールに`test_file`ファイルの中身が出力されます。
 
 5. ファイルを編集する  
-   一般的には`vi`を使用して編集しますが、本演習では基本的に右上のエディタを使用します。  
+   本演習では基本的に右上のエディタを使用します。  
    右上のエディタに`test_file`というファイルが作られているはずなので、これをクリックして開いてください。  
    ファイルの中に`test`と書かれているはずなので、適当に内容を書き換えてください。  
    <kbd>Ctrl</kbd>+<kbd>S</kbd>でファイルを保存し、以下のコマンドをクリックしてください。  
-   `cat ~/test_file`{{execute}}  
+   `cat ~/works/test_file`{{execute}}  
    コンソールに`test_file`ファイルの中身が出力されます。
 
 6. ファイルを削除する  
    以下のコマンドをクリックしてください。  
-   `rm -f ~/test_file`{{execute}}  
+   `rm -f ~/works/test_file`{{execute}}  
    `test_file`ファイルが削除されます。エディタ上からもファイル名が消えていることが確認できます。

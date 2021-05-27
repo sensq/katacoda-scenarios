@@ -10,9 +10,8 @@
 
 ```yaml
     target03:
-      vars:
-        ansible_port: 2224
-        ansible_user: john
+      ansible_port: 2224
+      ansible_user: john
 ```{{copy}}
 
 ファイルを保存したら以下のコマンドでインベントリファイルを確認します。
@@ -24,21 +23,21 @@
 
 ```yaml
 all:
-  hosts:
-    target01:
-      vars:  # hostごとの変数
-        ansible_port: 2222
-        ansible_user: hoge
-    target02:
-      vars:  # hostごとの変数
-        ansible_port: 2223
-        ansible_user: foo
-    target03:
-      vars:
-        ansible_port: 2224
-        ansible_user: john
-  vars:  # 共通の変数
-    ansible_ssh_private_key_file: ~/.ssh/test_key
+  children:
+    ungrouped:
+      hosts:
+        target01:
+          ansible_port: 2222
+          ansible_ssh_private_key_file: ~/.ssh/test_key
+          ansible_user: hoge
+        target02:
+          ansible_port: 2223
+          ansible_ssh_private_key_file: ~/.ssh/test_key
+          ansible_user: foo
+        target03:
+          ansible_port: 2224
+          ansible_ssh_private_key_file: ~/.ssh/test_key
+          ansible_user: john
 ```
 
 ## 2. Playbookの再実行

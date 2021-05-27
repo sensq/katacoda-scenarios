@@ -5,8 +5,7 @@
 インベントリファイルの確認方法を学びます。  
 現時点では、中身の内容を理解しなくても問題ありません。
 
-1. ファイルの中身を確認します  
-`cat inventory`{{execute}}  
+1. エディタ上の`inventory`ファイルをクリックし、ファイルの中身を確認します
 2. `ansible-inventory`コマンドでもインベントリを確認できることを確認します  
 `ansible-inventory -i inventory --list -y`{{execute}}
 
@@ -15,8 +14,7 @@
 Ansibleの設定ファイルの確認方法を学びます。  
 現時点では、中身の内容を理解しなくても問題ありません。
 
-1. ファイルの中身を確認します  
-`cat ansible.cfg`{{execute}}  
+1. エディタ上の`ansible.cfg`ファイルをクリックし、ファイルの中身を確認します
 2. `ansible-config view`コマンドでもインベントリを確認できることを確認します  
 `ansible-config view`{{execute}}
 
