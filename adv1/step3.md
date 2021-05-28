@@ -1,11 +1,12 @@
 # 課題1: Ansibleでファイルを収集する
 
-fetchモジュールを使ったPlaybookを作る。  
-本課題は最初の課題のためコピペだけで作れるようにテキストを作成している。
+本課題では、簡単なPlaybookの構成と作り方について学んでもらいます。  
+題材として、fetchモジュールを使ったPlaybookを作ります。  
+本課題は最初の課題のため、コピペだけで作れるようにテキストを作成しています。
 
 ## 1. Playbookの作成
 
-`playbook_kadai-1.yaml`に以下をコピペ
+`playbook_kadai-1.yaml`に以下をコピペします。
 
 ```yaml
 - hosts: all
@@ -15,7 +16,7 @@ fetchモジュールを使ったPlaybookを作る。
 
 ## 2. タスクの作成
 
-`roles/kadai-1/tasks/fetch.yaml`に以下をコピペ
+`roles/kadai-1/tasks/fetch.yaml`に以下をコピペします。
 
 ```yaml
 - name: fetch 「/etc/passwd」
@@ -25,7 +26,7 @@ fetchモジュールを使ったPlaybookを作る。
 ```{{copy}}
 
 
-`roles/kadai-1/tasks/main.yaml`に以下をコピペ
+`roles/kadai-1/tasks/main.yaml`に以下をコピペします。
 
 ```yaml
 - include: fetch.yaml

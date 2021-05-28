@@ -1,10 +1,11 @@
 # 課題4: ループを使う
 
-fetchモジュールにwith_items使って複数ファイル取得するPlaybookを作る。
+本課題では、ループを行って複数の似たような処理を行うPlaybookの作り方を学んでもらいます。  
+題材として、fetchモジュールを使って複数ファイルを取得するPlaybookを作ります。
 
 ## 1. Playbookの作成
 
-`playbook_kadai-4.yaml`に以下をコピペ
+`playbook_kadai-4.yaml`に以下をコピペします。
 
 ```yaml
 - hosts: all
@@ -14,7 +15,7 @@ fetchモジュールにwith_items使って複数ファイル取得するPlaybook
 
 ## 2. インベントリファイルに変数を定義
 
-`works`ディレクトリ直下の`inventory`ファイルに以下をコピペ
+`works`ディレクトリ直下の`inventory`ファイルに以下をコピペします。
 
 ```yaml
 all:
@@ -48,15 +49,15 @@ all:
 
 ## 3. タスクの作成
 
-[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[fetchモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html#fetch-module)と[ループ](https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_loops.html)を参考に、`roles/kadai-4/tasks/loop.yaml`へタスクを作成する。  
-実装の要件は以下の通り
+[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[fetchモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html#fetch-module)と[ループ](https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_loops.html)を参考に、`roles/kadai-4/tasks/loop.yaml`へタスクを作成します。  
+実装の要件は以下の通りです。
 
 * `fetch`モジュールを使うこと
 * `fetch_files`変数に定義したパスのファイルをループを使ってすべて取得すること
 * 取得したファイルは`works`ディレクトリ直下の`kadai-4_fetch_files`というディレクトリに配置すること
 * `roles/kadai-4/tasks/main.yaml`に`loop.yaml`を読み込む記述を行うこと
 
-回答例は次のページに記載しているが、どうしても上手くいかない場合にだけ参考にすること。
+回答例は次のページに記載していますが、どうしても上手くいかない場合にだけ参考にしてください。
 
 ## 4. Playbookを実行
 
