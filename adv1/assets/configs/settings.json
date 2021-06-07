@@ -1,10 +1,8 @@
-mkdir -p /opt/.katacodacode/user-data/User/
-cat << VSCODEEOF > /opt/.katacodacode/user-data/User/settings.json
 {
   "window.autoDetectColorScheme": false,
   "window.openFoldersInNewWindow": "off",
   "workbench.colorTheme": "Default Dark+",
-  "workbench.startupEditor": "none", 
+  "workbench.startupEditor": "none",
   "workbench.colorCustomizations": {},
   "editor.cursorWidth": 3,
   "editor.minimap.showSlider": "always",
@@ -19,4 +17,3 @@ cat << VSCODEEOF > /opt/.katacodacode/user-data/User/settings.json
     "**/.*": true
   }
 }
-VSCODEEOF
