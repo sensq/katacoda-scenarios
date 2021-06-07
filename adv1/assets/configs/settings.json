@@ -4,7 +4,6 @@ cat << VSCODEEOF > /opt/.katacodacode/user-data/User/settings.json
   "window.autoDetectColorScheme": false,
   "window.openFoldersInNewWindow": "off",
   "workbench.colorTheme": "Default Dark+",
-  "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none", 
   "workbench.colorCustomizations": {},
   "editor.cursorWidth": 3,
@@ -18,13 +17,6 @@ cat << VSCODEEOF > /opt/.katacodacode/user-data/User/settings.json
   "files.autoSave": "off",
   "files.exclude": {
     "**/.*": true
-  },
-  "terminal.integrated.defaultProfile.linux": "Bash",
-  "terminal.integrated.profiles.linux": {
-    "Bash": {
-      "path": "/bin/bash",
-      "args": ["-l"]
-    }
   }
 }
 VSCODEEOF
