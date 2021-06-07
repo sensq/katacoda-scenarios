@@ -12,6 +12,7 @@ resource "aws_instance" "this" {
   }
 
   vpc_security_group_ids = var.security_groups
+  iam_instance_profile   = var.iam_instance_profile
 
   tags        = merge(var.tags, map("Name", var.name))
   volume_tags = merge(var.tags, map("Name", var.name))

@@ -28,6 +28,7 @@ variable "subnet_id" {
 variable "key_name" {
   description = "作成するインスタンスで使用するSSH用のキーペア名"
   type        = string
+  default     = null
 }
 
 variable "associate_public_ip_address" {
@@ -47,4 +48,9 @@ variable "root_block_device" {
 variable "security_groups" {
   description = "作成するインスタンスで使用するセキュリティグループのリスト"
   type        = list(string)
+}
+
+variable "iam_instance_profile" {
+  description = "作成するインスタンスにアタッチするインスタンスプロファイル"
+  type        = string
 }
