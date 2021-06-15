@@ -13,7 +13,7 @@ host_varsは`host_vars`という名前のディレクトリを作成し、
 １. varsの値を元の状態に戻します
 
 配置先ディレクトリを`/root`に変更しているかと思いますので、`/tmp`に戻します。  
-`roles/simple_role/vars/main.yaml`に以下をコピペしてください。
+`roles/simple_role/vars/main.yaml`{{open}}に以下をコピペしてください。
 
 ```yaml
 dest_dir: "/tmp"

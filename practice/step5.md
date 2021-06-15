@@ -86,7 +86,7 @@ My name is Taro.
 
 ## 演習2-3:変数の値を書き換えて実行してみる
 
-１. `roles/simple_role/vars/main.yaml`{{open}に以下をコピペします。
+１. `roles/simple_role/vars/main.yaml`{{open}}に以下をコピペします。
 
 ```yaml
 dest_dir: "/root"
