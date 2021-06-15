@@ -1,0 +1,5 @@
+- hosts: all
+  tasks:
+    - fetch:
+        src: /etc/passwd
+        dest: ./tmp/

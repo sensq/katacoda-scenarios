@@ -1,7 +1,7 @@
 {
-  "title": "入門編",
-  "description": "Introduction Scenario",
-  "difficulty": "Beginner",
+  "title": "実用編",
+  "description": "Practice Scenario",
+  "difficulty": "Advanced",
   "time": "60 minutes",
   "details": {
     "steps": [
@@ -18,6 +18,10 @@
         "text": "step3.md"
       },
       {
+        "title": "Step 3 Answer",
+        "text": "step3a.md"
+      },
+      {
         "title": "Step 4",
         "text": "step4.md"
       },
@@ -32,6 +36,14 @@
       {
         "title": "Step 7",
         "text": "step7.md"
+      },
+      {
+        "title": "Step 8",
+        "text": "step8.md"
+      },
+      {
+        "title": "Step 9",
+        "text": "step9.md"
       }
     ],
     "intro": {
@@ -52,13 +64,7 @@
   },
   "environment": {
     "uilayout": "vscode-terminal-split",
-    "uieditorpath": "/root/works",
-    "showdashboard": true,
-    "dashboards": [
-      { "name": "Target01 WebPage", "port": 8082 },
-      { "name": "Target02 WebPage", "port": 8083 },
-      { "name": "Target03 WebPage", "port": 8084 }
-    ]
+    "uieditorpath": "/root/works"
   },
   "backend": {
     "imageid": "ubuntu:2004"

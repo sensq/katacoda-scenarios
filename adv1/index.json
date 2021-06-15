@@ -1,7 +1,7 @@
 {
-  "title": "adv1",
-  "description": "advanced scenario",
-  "difficulty": "Advanced",
+  "title": "基礎編",
+  "description": "Basic Scenario",
+  "difficulty": "Beginner",
   "time": "60 minutes",
   "details": {
     "steps": [
