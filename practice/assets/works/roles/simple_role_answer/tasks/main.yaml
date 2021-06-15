@@ -2,4 +2,4 @@
 - name: "put template_file to {{ dest_dir }}"
   template:
     src: ./templates/testfile.j2
-    dest: {{ dest_dir }}
+    dest: "{{ dest_dir }}"

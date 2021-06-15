@@ -10,43 +10,45 @@
 1-1で実装した`simple_role`に以下の手順で変更を加え、変数化したTemplateファイルを配置するRoleを実装してください。  
 なお、わかりやすさを優先して手順に番号を振っていますが、実際はどの順番で変更してもまったく問題ありません。
 
-1. `roles/simple_role/tasks/main.yaml`に以下をコピペします。
+１. `roles/simple_role/tasks/main.yaml`に以下をコピペします。
 
 `/tmp`以外にも配置できるように`dest`で指定しているパラメータを変数化します。  
-変数化は適当に決めた変数名を`{{ }}`で括るだけでよいです。  
-また、タスク名にも変数は使えるため、上手く使うと可読性が高まります。
+変数化は適当に決めた変数名を`"{{ }}"`で括るだけでよいです。  
+また、タスク名にも変数は使えるため、上手く使うと可読性が高まります。  
+※タスク名のように、文字列内に変数を埋め込む場合は全体が`"`（ダブルクォーテーション）で括られていればよいです。
 
 ```yaml
 - name: "put template_file to {{ dest_dir }}"
   template:
     src: ./templates/testfile.j2
-    dest: {{ dest_dir }}
+    dest: "{{ dest_dir }}"
 ```{{copy}}
 
-2. `roles/simple_role/templates/testfile.j2`に以下をコピペします。
+２. `roles/simple_role/templates/testfile.j2`に以下をコピペします。
 
-`Taro`さん以外の名前にも変更できるように`Taro`と記述していた部分を変数化します。
+`Taro`さん以外の名前にも変更できるように`Taro`と記述していた部分を変数化します。  
+※理由は省略しますが、Template内では`"`で括る必要ありません。
 
 ```text
-My Name is {{ name }}.
+My name is {{ user_name }}.
 ```{{copy}}
 
-3. `roles/simple_role/vars/main.yaml`に以下をコピペします。
+３. `roles/simple_role/vars/main.yaml`に以下をコピペします。
 
 変数化した変数が実際に参照する値を定義します。  
 ここで定義した値が実行時に同名の変数が記述されている部分へ展開されて実行されます。  
 このRoleでは配置するディレクトリは基本的に固定であるものと想定し、`dest`で指定するディレクトリパス`dest_dir`変数は`vars`に定義することにします。
 
-```text
+```yaml
 dest_dir: "/tmp"
 ```{{copy}}
 
-4. `roles/simple_role/defaults/main.yaml`に以下をコピペします。
+４. `roles/simple_role/defaults/main.yaml`に以下をコピペします。
 
 名前は基本的に変更して実行するものであると想定し、Templateファイルで参照している`name`変数は`defaults`に定義することにします。
 
-```text
-name: "Taro"
+```yaml
+user_name: "Taro"
 ```{{copy}}
 
 最終的に以下の構成になります。
@@ -77,40 +79,40 @@ roles/
 
 ```
 target01 | CHANGED | rc=0 >>
-My Name is Taro.
+My name is Taro.
 target02 | CHANGED | rc=0 >>
-My Name is Taro.
+My name is Taro.
 ```
 
 ## 演習2-3:変数の値を書き換えて実行してみる
 
-1. `roles/simple_role/vars/main.yaml`に以下をコピペします。
+１. `roles/simple_role/vars/main.yaml`に以下をコピペします。
 
-```text
+```yaml
 dest: "/root"
 ```{{copy}}
 
-2. `roles/simple_role/defaults/main.yaml`に以下をコピペします。
+２. `roles/simple_role/defaults/main.yaml`に以下をコピペします。
 
-```text
+```yaml
 name: "Jiro"
 ```{{copy}}
 
-3. Playbookを再実行します
+３. Playbookを再実行します
 
 `ansible-playbook -i inventory playbook_simple_role.yaml`{{execute}}
 
 今回はChangedになるはずです。
 
-4. 実行確認をします
+４. 実行確認をします
 
 `ansible -m shell -a "cat /testfile" -i inventory all`{{execute}}
 
 以下のように出力されるはずです。
 
-```
+```text
 target01 | CHANGED | rc=0 >>
-My Name is Jiro.
+My name is Jiro.
 target02 | CHANGED | rc=0 >>
-My Name is Jiro.
+My name is Jiro.
 ```
