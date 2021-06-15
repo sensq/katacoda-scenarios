@@ -95,7 +95,7 @@ dest_dir: "/root"
 ２. `roles/simple_role/defaults/main.yaml`に以下をコピペします。
 
 ```yaml
-name: "Jiro"
+user_name: "Jiro"
 ```{{copy}}
 
 ３. Playbookを再実行します
@@ -106,7 +106,7 @@ name: "Jiro"
 
 ４. 実行確認をします
 
-`ansible -m shell -a "cat /root/testfile" -i inventory all`{{execute}}
+`ansible -m shell -a "cat /root/testfile" -i inventory all -b`{{execute}}
 
 以下のように出力されるはずです。
 
