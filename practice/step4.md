@@ -43,3 +43,14 @@ My name is Taro.
 target02 | CHANGED | rc=0 >>
 My name is Taro.
 ```
+
+
+⚠️補足  
+変数には任意の名前を付けることができますが、「文字、数字、アンダースコア」以外を使用することはできず、
+変数名の1文字目には数字を使えないという制約があります。  
+推奨はしませんが、文字であれば全角や日本語でも使用可能です。  
+また、`name`や`environment`などの「予約語」と呼ばれる一部の特殊な文字列は変数名に使用することができません。  
+予約語のリストは公式に公開されていないようですが、予約語を変数名にした場合はAnsible実行時に  
+`[WARNING]: Found variable using reserved name: environment`  
+`ERROR! Invalid variable name in vars specified for Play: 'class' is not a valid variable name`  
+というような警告やエラーが表示されるため、この場合は変数名を変更してください。
