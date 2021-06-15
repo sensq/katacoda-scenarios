@@ -21,7 +21,7 @@
 - name: "put template_file to {{ dest_dir }}"
   template:
     src: ./templates/testfile.j2
-    dest: "{{ dest_dir }}"
+    dest: "{{ dest_dir }}/testfile"
 ```{{copy}}
 
 ２. `roles/simple_role/templates/testfile.j2`に以下をコピペします。
@@ -106,7 +106,7 @@ name: "Jiro"
 
 ４. 実行確認をします
 
-`ansible -m shell -a "cat /testfile" -i inventory all`{{execute}}
+`ansible -m shell -a "cat /root/testfile" -i inventory all`{{execute}}
 
 以下のように出力されるはずです。
 

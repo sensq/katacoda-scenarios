@@ -10,7 +10,16 @@ host_varsは`host_vars`という名前のディレクトリを作成し、
 その中にインベントリで記載している実行対象と同じ名前のYamlファイルを作成することで行います。  
 すでにファイルは作成済みなため、以下の手順でファイルを編集してください。
 
-１. `target01`のhost_varsに変数を定義する
+１. varsの値を元の状態に戻します
+
+配置先ディレクトリを`/root`に変更しているかと思いますので、`/tmp`に戻します。  
+`roles/simple_role/vars/main.yaml`に以下をコピペしてください。
+
+```yaml
+dest_dir: "/tmp"
+```{{copy}}
+
+２. `target01`のhost_varsに変数を定義する
 
 `host_vars/target01.yaml`に以下をコピペします。
 
@@ -18,15 +27,17 @@ host_varsは`host_vars`という名前のディレクトリを作成し、
 user_name: "Alice"
 ```{{copy}}
 
-２. `target02`のhost_varsに変数を定義する
+３. `target02`のhost_varsに変数を定義する
 
-`host_vars/target02.yaml`に以下をコピペします。
+`host_vars/target02.yaml`に以下をコピペします。  
+こちらには`vars`に定義した変数と`defaults`に定義した変数の挙動の違いを確認するため、`dest_dir`も定義しておくことにします。
 
 ```yaml
+dest_dir: "/opt"
 user_name: "Bob"
 ```{{copy}}
 
-３. Playbookを再実行します
+４. Playbookを再実行します
 
 `ansible-playbook -i inventory playbook_simple_role.yaml`{{execute}}
 
@@ -34,10 +45,12 @@ user_name: "Bob"
 
 ４. 実行確認をします
 
-`ansible -m shell -a "cat /testfile" -i inventory all`{{execute}}
+`ansible -m shell -a "cat /tmp/testfile" -i inventory all`{{execute}}
 
 以下のように出力されるはずです。  
-サーバごとに異なる変数を定義して実行できていることが確認できます。
+サーバごとに異なる変数を定義して実行できていることが確認できます。  
+また、`target02`の方は`dest_dir`に`/opt`を定義したにも関わらず、`vars`で定義している`/tmp`に配置されていることも確認できます。  
+このように、変数化の目的に応じて`vars`と`defaults`を使い分けると実装の意図がわかりやすくなり、可読性が高くなります。
 
 ```text
 target01 | CHANGED | rc=0 >>

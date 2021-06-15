@@ -1,6 +1,6 @@
 ---
 - hosts: all
   vars:
-    name: "Taro"
+    user_name: "Taro"
   tasks:
-    - shell: echo "My Name is {{ name }}" > /tmp/myname
+    - shell: echo "My name is {{ user_name }}" > /tmp/myname

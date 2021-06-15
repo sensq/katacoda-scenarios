@@ -18,7 +18,7 @@ Roleは特定の名前のディレクトリ内のファイルを自動的に読�
 - name: "put template_file to /tmp"
   template:
     src: ./templates/testfile.j2
-    dest: /tmp
+    dest: /tmp/testfile
 ```{{copy}}
 
 ２. `roles/simple_role/templates/testfile.j2`に以下をコピペします。
