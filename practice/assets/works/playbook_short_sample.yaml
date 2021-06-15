@@ -1,5 +1,6 @@
+---
 - hosts: all
+  vars:
+    name: "Taro"
   tasks:
-    - fetch:
-        src: /etc/passwd
-        dest: ./tmp/
+    - shell: echo "My Name is {{ name }}" > /tmp/myname
