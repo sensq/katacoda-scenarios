@@ -1,6 +1,6 @@
 # 課題5-回答: 条件分岐を使う
 
-`roles/kadai-5/tasks/when.yaml`
+`roles/kadai-5/tasks/when.yaml`{{open}}
 
 ```yaml
 - name: fetch 「/etc/passwd」
@@ -11,7 +11,7 @@
 ```{{copy}}
 
 
-`roles/kadai-5/tasks/main.yaml`
+`roles/kadai-5/tasks/main.yaml`{{open}}
 
 ```yaml
 - include: when.yaml

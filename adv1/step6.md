@@ -5,7 +5,7 @@
 
 ## 1. Playbookの作成
 
-`playbook_kadai-4.yaml`に以下をコピペします。
+`playbook_kadai-4.yaml`{{open}}に以下をコピペします。
 
 ```yaml
 - hosts: all
@@ -15,7 +15,7 @@
 
 ## 2. インベントリファイルに変数を定義
 
-`works`ディレクトリ直下の`inventory`ファイルに以下をコピペします。
+`works`ディレクトリ直下の`inventory`{{open}}ファイルに以下をコピペします。
 
 ```yaml
 all:
@@ -49,13 +49,13 @@ all:
 
 ## 3. タスクの作成
 
-[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[fetchモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html#fetch-module)と[ループ](https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_loops.html)を参考に、`roles/kadai-4/tasks/loop.yaml`へタスクを作成します。  
+[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[fetchモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html#fetch-module)と[ループ](https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_loops.html)を参考に、`roles/kadai-4/tasks/loop.yaml`{{open}}へタスクを作成します。  
 実装の要件は以下の通りです。
 
 * `fetch`モジュールを使うこと
 * `fetch_files`変数に定義したパスのファイルをループを使ってすべて取得すること
 * 取得したファイルは`works`ディレクトリ直下の`kadai-4_fetch_files`というディレクトリに配置すること
-* `roles/kadai-4/tasks/main.yaml`に`loop.yaml`を読み込む記述を行うこと
+* `roles/kadai-4/tasks/main.yaml`{{open}}に`loop.yaml`を読み込む記述を行うこと
 
 回答例は次のページに記載していますが、どうしても上手くいかない場合にだけ参考にしてください。
 

@@ -6,7 +6,7 @@
 
 ## 1. Playbookの作成
 
-`playbook_kadai-1.yaml`に以下をコピペします。
+`playbook_kadai-1.yaml`{{open}}に以下をコピペします。
 
 ```yaml
 - hosts: all
@@ -16,7 +16,7 @@
 
 ## 2. タスクの作成
 
-`roles/kadai-1/tasks/fetch.yaml`に以下をコピペします。
+`roles/kadai-1/tasks/fetch.yaml`{{open}}に以下をコピペします。
 
 ```yaml
 - name: fetch 「/etc/passwd」
@@ -26,7 +26,7 @@
 ```{{copy}}
 
 
-`roles/kadai-1/tasks/main.yaml`に以下をコピペします。
+`roles/kadai-1/tasks/main.yaml`{{open}}に以下をコピペします。
 
 ```yaml
 - include: fetch.yaml

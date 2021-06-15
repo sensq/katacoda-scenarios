@@ -5,7 +5,7 @@
 
 ## 1. Playbookの作成
 
-`playbook_kadai-5.yaml`に以下をコピペします。
+`playbook_kadai-5.yaml`{{open}}に以下をコピペします。
 
 ```yaml
 - hosts: all
@@ -19,13 +19,13 @@ Step 6で作成したインベントリファイルと同様の状態にして�
 
 ## 3. タスクの作成
 
-[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[fetchモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html#fetch-module)と[条件](https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_conditionals.html)を参考に、`roles/kadai-5/tasks/when.yaml`へタスクを作成します。  
+[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[fetchモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html#fetch-module)と[条件](https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_conditionals.html)を参考に、`roles/kadai-5/tasks/when.yaml`{{open}}へタスクを作成します。  
 実装の要件は以下の通りです。
 
 * `fetch`モジュールを使うこと
 * `server_location`の値が「豊洲」になっているターゲットサーバからのみ、`/etc/passwd`ファイルを取得すること
 * 取得したファイルは`works`ディレクトリ直下の`kadai-5_fetch_files`というディレクトリに配置すること
-* `roles/kadai-5/tasks/main.yaml`に`when.yaml`を読み込む記述を行うこと
+* `roles/kadai-5/tasks/main.yaml`{{open}}に`when.yaml`を読み込む記述を行うこと
 
 回答例は次のページに記載していますが、どうしても上手くいかない場合にだけ参考にしてください。
 

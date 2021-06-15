@@ -5,7 +5,7 @@
 
 ## 1. Playbookの作成
 
-`playbook_kadai-2.yaml`に以下をコピペします。
+`playbook_kadai-2.yaml`{{open}}に以下をコピペします。
 
 ```yaml
 - hosts: all
@@ -15,7 +15,7 @@
 
 ## 2. ターゲットサーバへ配置するファイルの作成
 
-`roles/kadai-2/files/copy_file`に以下をコピペします。
+`roles/kadai-2/files/copy_file`{{open}}に以下をコピペします。
 
 ```text
 ターゲットサーバに配置されるファイルです。
@@ -24,14 +24,14 @@ Ansible実行後にターゲットサーバに配置されていることを確�
 
 ## 3. タスクの作成
 
-[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[copyモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/copy_module.html)を参考に、`roles/kadai-2/tasks/copy.yaml`へタスクを作成します。  
+[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[copyモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/copy_module.html)を参考に、`roles/kadai-2/tasks/copy.yaml`{{open}}へタスクを作成します。  
 実装の要件は以下の通りです。
 
 * `copy`モジュールを使うこと
 * 2で作成した`roles/kadai-2/files/copy_file`をターゲットサーバの`/tmp/copy_file`へ配置すること
   * ヒント：copyのソースとなるローカルファイルのパスは、絶対パスまたはロールのディレクトリからの相対パスで指定する必要がある
   * 今回の場合は、`roles/kadai-2/`が相対パスの起点となる
-* `roles/kadai-2/tasks/main.yaml`に`copy.yaml`を読み込む記述を行うこと
+* `roles/kadai-2/tasks/main.yaml`{{open}}に`copy.yaml`を読み込む記述を行うこと
 
 回答例は次のページに記載していますが、どうしても上手くいかない場合にだけ参考にしてください。
 

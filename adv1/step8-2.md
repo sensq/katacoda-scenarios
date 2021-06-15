@@ -6,7 +6,7 @@ shellモジュールは、使うと必ずchangedになってしまう（＝毎�
 
 ## 1. Playbookの作成
 
-`playbook_kadai-6-2.yaml`に以下をコピペします。
+`playbook_kadai-6-2.yaml`{{open}}に以下をコピペします。
 
 ```yaml
 - hosts: all
@@ -16,7 +16,7 @@ shellモジュールは、使うと必ずchangedになってしまう（＝毎�
 
 ## 2. タスクの作成
 
-`roles/kadai-6-2/tasks/shell.yaml`に前課題の回答が記載されているため、このファイルに修正を加えて冪等性の考慮されたPlaybookにします。  
+`roles/kadai-6-2/tasks/shell.yaml`{{open}}に前課題の回答が記載されているため、このファイルに修正を加えて冪等性の考慮されたPlaybookにします。  
 実装の要件は以下の通りです。
 
 * Playbook実行で`changed`が発生しないこと

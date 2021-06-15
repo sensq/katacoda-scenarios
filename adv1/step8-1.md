@@ -5,7 +5,7 @@
 
 ## 1. Playbookの作成
 
-`playbook_kadai-6-1.yaml`に以下をコピペします。
+`playbook_kadai-6-1.yaml`{{open}}に以下をコピペします。
 
 ```yaml
 - hosts: all
@@ -15,14 +15,14 @@
 
 ## 2. タスクの作成
 
-[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[shellモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html#fetch-module)を参考に、`roles/kadai-6-1/tasks/shell.yaml`へタスクを作成します。  
+[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[shellモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html#fetch-module)を参考に、`roles/kadai-6-1/tasks/shell.yaml`{{open}}へタスクを作成します。  
 実装の要件は以下の通りです。
 
 * `shell`モジュールで`echo "test in checkfile" > ~/resultfile`を実行するタスクを作成すること
 * ターゲットサーバの`~/checkfile`に`test`という文字列が記載されていた場合のみ、上記タスクを実行すること
   * ヒント：`grep test ~/checkfile | wc -l`で記載有無の確認ができます
   * ヒント：`register`という機能を利用すると、コマンドの実行結果を変数に保持させることができます
-* `roles/kadai-6-1/tasks/main.yaml`に`shell.yaml`を読み込む記述を行うこと
+* `roles/kadai-6-1/tasks/main.yaml`{{open}}に`shell.yaml`を読み込む記述を行うこと
 * 冪等性は考慮しなくてよい
 
 回答例は次のページに記載していますが、どうしても上手くいかない場合にだけ参考にしてください。
