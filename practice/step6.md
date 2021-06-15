@@ -21,7 +21,7 @@ dest_dir: "/tmp"
 
 ２. `target01`のhost_varsに変数を定義する
 
-`host_vars/target01.yaml`に以下をコピペします。
+`host_vars/target01.yaml`{{open}}に以下をコピペします。
 
 ```yaml
 user_name: "Alice"
@@ -29,7 +29,7 @@ user_name: "Alice"
 
 ３. `target02`のhost_varsに変数を定義する
 
-`host_vars/target02.yaml`に以下をコピペします。  
+`host_vars/target02.yaml`{{open}}に以下をコピペします。  
 こちらには`vars`に定義した変数と`defaults`に定義した変数の挙動の違いを確認するため、`dest_dir`も定義しておくことにします。
 
 ```yaml

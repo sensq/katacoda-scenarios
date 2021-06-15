@@ -10,7 +10,7 @@
 1-1で実装した`simple_role`に以下の手順で変更を加え、変数化したTemplateファイルを配置するRoleを実装してください。  
 なお、わかりやすさを優先して手順に番号を振っていますが、実際はどの順番で変更してもまったく問題ありません。
 
-１. `roles/simple_role/tasks/main.yaml`に以下をコピペします。
+１. `roles/simple_role/tasks/main.yaml`{{open}}に以下をコピペします。
 
 `/tmp`以外にも配置できるように`dest`で指定しているパラメータを変数化します。  
 変数化は適当に決めた変数名を`"{{ }}"`で括るだけでよいです。  
@@ -24,7 +24,7 @@
     dest: "{{ dest_dir }}/testfile"
 ```{{copy}}
 
-２. `roles/simple_role/templates/testfile.j2`に以下をコピペします。
+２. `roles/simple_role/templates/testfile.j2`{{open}}に以下をコピペします。
 
 `Taro`さん以外の名前にも変更できるように`Taro`と記述していた部分を変数化します。  
 ※理由は省略しますが、Template内では`"`で括る必要ありません。
@@ -33,7 +33,7 @@
 My name is {{ user_name }}.
 ```{{copy}}
 
-３. `roles/simple_role/vars/main.yaml`に以下をコピペします。
+３. `roles/simple_role/vars/main.yaml`{{open}}に以下をコピペします。
 
 変数化した変数が実際に参照する値を定義します。  
 ここで定義した値が実行時に同名の変数が記述されている部分へ展開されて実行されます。  
@@ -43,7 +43,7 @@ My name is {{ user_name }}.
 dest_dir: "/tmp"
 ```{{copy}}
 
-４. `roles/simple_role/defaults/main.yaml`に以下をコピペします。
+４. `roles/simple_role/defaults/main.yaml`{{open}}に以下をコピペします。
 
 名前は基本的に変更して実行するものであると想定し、Templateファイルで参照している`name`変数は`defaults`に定義することにします。
 
@@ -92,7 +92,7 @@ My name is Taro.
 dest_dir: "/root"
 ```{{copy}}
 
-２. `roles/simple_role/defaults/main.yaml`に以下をコピペします。
+２. `roles/simple_role/defaults/main.yaml`{{open}}に以下をコピペします。
 
 ```yaml
 user_name: "Jiro"

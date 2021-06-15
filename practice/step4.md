@@ -9,10 +9,10 @@ Roleは特定の名前のディレクトリ内のファイルを自動的に読�
 
 ## 演習1-1：ベストプラクティス構成でRoleを実装する
 
-`playbook_simple_role.yaml`に`simple_role`Roleを実行するPlaybookが配置されています。  
+`playbook_simple_role.yaml`{{open}}に`simple_role`Roleを実行するPlaybookが配置されています。  
 この`simple_role`に以下の手順でTemplateファイルを配置するRoleを実装してください。
 
-１. `roles/simple_role/tasks/main.yaml`に以下をコピペします。
+１. `roles/simple_role/tasks/main.yaml`{{open}}に以下をコピペします。
 
 ```yaml
 - name: "put template_file to /tmp"
@@ -21,7 +21,7 @@ Roleは特定の名前のディレクトリ内のファイルを自動的に読�
     dest: /tmp/testfile
 ```{{copy}}
 
-２. `roles/simple_role/templates/testfile.j2`に以下をコピペします。
+２. `roles/simple_role/templates/testfile.j2`{{open}}に以下をコピペします。
 
 ```text
 My name is Taro.
