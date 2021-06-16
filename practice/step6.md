@@ -2,7 +2,8 @@
 
 演習2-1で変数化を行いましたが、変数の値を変更したい場合は結局Roleディレクトリ内のファイルを書き換えていました。  
 この運用ではRoleを使い回しにくいですし、実行対象ごとに異なる値を定義することができません。  
-そこで、Ansibleにはサーバごとに変数を定義できるように`host_vars`と呼ばれる仕組みが存在しています。  
+そこで、Ansibleにはサーバごとに変数を定義できるように`host_vars`と呼ばれる仕組みが存在しています。
+
 ![](https://raw.githubusercontent.com/sensq/katacoda-scenarios/main/practice/img/role.drawio.svg)
 
 ## 演習3-1：host_varsを作成してRoleを実行する

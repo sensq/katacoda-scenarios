@@ -2,7 +2,8 @@
 
 Roleは特定の名前のディレクトリ内のファイルを自動的に読み込むようになっています。  
 このディレクトリ構成はベストプラクティスと呼ばれることが多く、これに従ってRoleを実装することで再利用しやすいRoleになります。  
-なお、Role内で使用しない要素のディレクトリに関しては作成する必要ありません。  
+なお、Role内で使用しない要素のディレクトリに関しては作成する必要ありません。
+
 ![](https://raw.githubusercontent.com/sensq/katacoda-scenarios/main/practice/img/bestpractice.drawio.svg)
 
 ※本演習では`handlers`と`meta`は対象外とし、特に解説はしません。
