@@ -49,7 +49,7 @@ all:
 
 ## 3. タスクの作成
 
-[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[fetchモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html#fetch-module)と[ループ](https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_loops.html)を参考に、`roles/kadai-4/tasks/loop.yaml`{{open}}へタスクを作成します。  
+[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[fetchモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html)と[ループ](https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_loops.html)を参考に、`roles/kadai-4/tasks/loop.yaml`{{open}}へタスクを作成します。  
 実装の要件は以下の通りです。
 
 * `fetch`モジュールを使うこと

@@ -60,8 +60,9 @@ resource "aws_security_group" "this" {
 
 # インスタンスを配置するサブネット
 resource "aws_subnet" "this" {
-  vpc_id     = local.vpc_id
-  cidr_block = local.cidr_block
+  vpc_id            = local.vpc_id
+  cidr_block        = local.cidr_block
+  availability_zone = "ap-northeast-1b"
 
   tags = {
     Name        = "2021-rookie-training"

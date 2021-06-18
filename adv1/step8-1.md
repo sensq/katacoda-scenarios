@@ -15,7 +15,7 @@
 
 ## 2. タスクの作成
 
-[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[shellモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html#fetch-module)を参考に、`roles/kadai-6-1/tasks/shell.yaml`{{open}}へタスクを作成します。  
+[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[shellモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/shell_module.html)を参考に、`roles/kadai-6-1/tasks/shell.yaml`{{open}}へタスクを作成します。  
 実装の要件は以下の通りです。
 
 * `shell`モジュールで`echo "test in checkfile" > ~/resultfile`を実行するタスクを作成すること
