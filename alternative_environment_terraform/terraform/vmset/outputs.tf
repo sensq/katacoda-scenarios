@@ -3,7 +3,7 @@ output "instance_name" {
   value       = var.name
 }
 
-output "public_ip" {
-  description = "作成したインスタンスのパブリックIP"
-  value       = aws_instance.this.public_ip
+output "public_dns" {
+  description = "作成したインスタンスのパブリックDNS"
+  value       = aws_instance.this.public_dns
 }
