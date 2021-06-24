@@ -1,3 +1,5 @@
+[Step1](step1.md) - [2](step2.md) - [3](step3.md) - [4](step4.md) - [5](step5.md) - [6](step6.md) - [**7**](step7.md)
+
 # インベントリにターゲットを追加する
 
 インベントリファイルに3号機の情報を追加してWebサーバ構築のPlaybookを再実行します。
