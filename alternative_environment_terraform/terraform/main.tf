@@ -6,42 +6,63 @@ provider "aws" {
 }
 
 locals {
-  set_num    = 1                       # 作成したい台数を指定
-  vpc_id     = "vpc-6c712805"          # インスタンスを配置する適当なVPCのIDを指定
-  cidr_block = "10.0.190.0/24"         # 上記VPCに作成可能なサブネット用のCIDRブロックを指定
-  ami_id     = "ami-0edef0cb9b9283693" # 任意のAMI IDを指定
+  # 頻繁に変更する値
+  set_num = 1                       # 作成したい台数を指定
+  ami_id  = "ami-0edef0cb9b9283693" # 任意のAMI IDを指定
+
+  # 一度決めたら基本的に変更不要な値
+  vpc_id               = "vpc-6c712805"    # インスタンスを配置する適当なVPCのIDを指定
+  cidr_block           = "10.0.190.0/24"   # 上記VPCに作成可能なサブネット用のCIDRブロックを指定
+  availability_zone    = "ap-northeast-1b" # インスタンスを配置するAZを指定
+  instance_type        = "t2.small"
+  instance_volume_type = "gp2"
+  instance_volume_size = 8
+
+  ports = {
+    code_server  = 80
+    nginx_test_1 = 8082
+    nginx_test_2 = 8083
+    nginx_test_3 = 8084
+  }
+
+  tags = {
+    Name        = "rookie-training"
+    Environment = "training"
+  }
 }
 
 # インスタンスに関連付けるセキュリティグループ
 resource "aws_security_group" "this" {
-  name = "training_2021_security_group"
+  name = "training_security_group"
 
   vpc_id = local.vpc_id
+  tags   = local.tags
+
+  ingress {
+    description = "code-server"
+    from_port   = local.ports.code_server
+    to_port     = local.ports.code_server
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   ingress {
     description = "NginX-01"
-    from_port   = 8082
-    to_port     = 8082
+    from_port   = local.ports.nginx_test_1
+    to_port     = local.ports.nginx_test_1
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
     description = "NginX-02"
-    from_port   = 8083
-    to_port     = 8083
+    from_port   = local.ports.nginx_test_2
+    to_port     = local.ports.nginx_test_2
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
     description = "NginX-03"
-    from_port   = 8084
-    to_port     = 8084
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  ingress {
-    description = "code-server"
-    from_port   = 80
-    to_port     = 80
+    from_port   = local.ports.nginx_test_3
+    to_port     = local.ports.nginx_test_3
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -51,34 +72,22 @@ resource "aws_security_group" "this" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  tags = {
-    Name        = "2021-rookie-training"
-    Environment = "training"
-  }
 }
 
 # インスタンスを配置するサブネット
 resource "aws_subnet" "this" {
   vpc_id            = local.vpc_id
   cidr_block        = local.cidr_block
-  availability_zone = "ap-northeast-1b"
-
-  tags = {
-    Name        = "2021-rookie-training"
-    Environment = "training"
-  }
+  availability_zone = local.availability_zone
+  tags              = local.tags
 }
 
 # SSMで接続できるようにするためのインスタンスプロファイル
 module "ec2_ssm_profile" {
   source = "./instance_profile"
 
-  name_prefix = "rookie-training"
-  tags = {
-    Name        = "2021-rookie-training"
-    Environment = "training"
-  }
+  name_prefix = "training"
+  tags        = local.tags
 }
 
 module "vmset" {
@@ -87,24 +96,21 @@ module "vmset" {
 
   name                        = format("training-%03d", each.value)
   ami_id                      = local.ami_id
-  instance_type               = "t2.medium"
+  instance_type               = local.instance_type
   subnet_id                   = aws_subnet.this.id
   associate_public_ip_address = true
   iam_instance_profile        = module.ec2_ssm_profile.name
+  tags                        = local.tags
 
   root_block_device = {
-    volume_type           = "gp2"
-    volume_size           = "8"
+    volume_type           = local.instance_volume_type
+    volume_size           = local.instance_volume_size
     delete_on_termination = true
   }
 
   security_groups = [
     aws_security_group.this.id
   ]
-
-  tags = {
-    Environment = "training"
-  }
 }
 
 output "vmset" {

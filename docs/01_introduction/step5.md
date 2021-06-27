@@ -24,7 +24,8 @@ Start - [1](step1.md) - [2](step2.md) - [3](step3.md) - [4](step4.md) - [**5**](
 `cat roles/common/tasks/task_sample.yaml`
 
 このファイルには`copy`モジュールのタスクが定義されており、`files/copytestfile`ファイルをターゲットの`/tmp`へ配置していることがわかります。  
-`main.yaml`で`include`しているのはこのファイルのみのため、このロールで実行される処理は上記のみであることがわかります。
+`main.yaml`で`include`しているのはこのファイルのみのため、このロールで実行される処理は上記のみであることがわかります。  
+なお、今回は今後の拡張性を考慮して`include`を使用していますが、小規模なロールであれば`main.yaml`に直接タスクを記載しても構いません。
 
 ## 3. Playbookの構成まとめ
 
