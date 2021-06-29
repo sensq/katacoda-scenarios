@@ -50,7 +50,7 @@ Playbookを実行
 Playbookを再実行し、skippingになることを確認  
 `ansible-playbook -i inventory playbook_kadai-6-2.yaml`
 
-`resultfile`に1行しか`test in checkfile`と記載された行が無いことを確認  
+`resultfile`に1行しかホスト名の記載された行が無いことを確認  
 `ssh target01 -i /root/.ssh/test_key "cat ~/resultfile"`  
 `ssh target02 -i /root/.ssh/test_key "cat ~/resultfile"`
 
