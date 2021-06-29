@@ -1,4 +1,4 @@
-Start - [1](step1.md) - [2](step2.md) - [3](step3.md) - [**4**](step4.md) - [5](step5.md) - [6](step6.md) - [7](step7.md) - [8](step8.md) - [9](step9.md) - [10](step10.md) - End
+Start - [1](step1.md) - [2](step2.md) - [3](step3.md) - [**4**](step4.md) - [5](step5.md) - [6](step6.md) - [7](step7.md) - [8](step8.md) - [9](step9.md) - [10](step10.md) - [11](step11.md) - [12](step12.md) - End
 
 # 課題2: Ansibleでファイルを配布する
 
@@ -52,12 +52,21 @@ Ansible実行後にターゲットサーバに配置されていることを確�
 `cat /tmp/copy_file`  
 `exit`
 
+:warning:  
+sshコマンドは引数にシェルコマンドを渡すと、リモート先でシェルコマンドを実行した結果が返ってきます。  
+これを利用することで上記の確認操作を以下のように簡略化できます。  
+`ssh target01 -i /root/.ssh/test_key "cat /tmp/copy_file"`
+
 ### 2号機
 
 `ssh target02 -i /root/.ssh/test_key`  
 `ls /tmp`  
 `cat /tmp/copy_file`  
 `exit`
+
+:warning:  
+上記と同様に、SSHの対象を変更すれば確認操作を簡略化できます。  
+`ssh target02 -i /root/.ssh/test_key "cat /tmp/copy_file"`
 
 ---
 
