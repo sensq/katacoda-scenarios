@@ -54,7 +54,7 @@ Ansible実行後にターゲットサーバに配置されていることを確�
 
 ## 4. タスクの作成
 
-[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[templateモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/template_module.html)を参考に、`roles/kadai-3/tasks/main.yaml`へタスクを作成します。  
+[templateモジュールのドキュメント](https://docs.ansible.com/ansible/2.9_ja/modules/template_module.html)を参考に、`roles/kadai-3/tasks/main.yaml`へタスクを作成します。  
 実装の要件は以下の通りです。
 
 * `template`モジュールを使うこと

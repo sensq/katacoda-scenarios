@@ -26,7 +26,7 @@ Ansible実行後にターゲットサーバに配置されていることを確�
 
 ## 3. タスクの作成
 
-[Ansibleの公式ドキュメント](https://docs.ansible.com/ansible/latest/index.html)の[copyモジュール](https://docs.ansible.com/ansible/2.9_ja/modules/copy_module.html)を参考に、`roles/kadai-2/tasks/main.yaml`へタスクを作成します。  
+[copyモジュールのドキュメント](https://docs.ansible.com/ansible/2.9_ja/modules/copy_module.html)を参考に、`roles/kadai-2/tasks/main.yaml`へタスクを作成します。  
 実装の要件は以下の通りです。
 
 * `copy`モジュールを使うこと
