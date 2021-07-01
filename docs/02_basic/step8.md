@@ -63,7 +63,9 @@ all:
 
 ## 4. Playbookを実行
 
-`ansible-playbook -i inventory playbook_kadai-4.yaml`
+```bash
+ansible-playbook -i inventory playbook_kadai-4.yaml
+```
 
 ## 5. 取得したファイルの確認
 

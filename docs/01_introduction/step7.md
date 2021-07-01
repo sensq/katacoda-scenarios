@@ -17,7 +17,9 @@ Start - [1](step1.md) - [2](step2.md) - [3](step3.md) - [4](step4.md) - [5](step
 
 ファイルを保存したら以下のコマンドでインベントリファイルを確認します。
 
-`ansible-inventory -i inventory --list -y`
+```bash
+ansible-inventory -i inventory --list -y
+```
 
 以下の出力がされたらインベントリファイルへの追加は完了です。  
 インデント（スペースの個数）が大事になるため、以下と同じ出力にならない場合は同じになるように編集し直してください。
@@ -43,8 +45,11 @@ all:
 
 ## 2. Playbookの再実行
 
-以下のコマンドを実行してください。  
-`ansible-playbook -i inventory playbook_nginx.yaml`
+以下のコマンドを実行してください。
+
+```bash
+ansible-playbook -i inventory playbook_nginx.yaml
+```
 
 実行が完了したら、先程と同様に3号機のページ（`演習環境のURL:8084`）へアクセスしてページが表示されることを確認します。  
 なお、Playbookの再実行で1号機と2号機はすべて`ok`または`skipping`となっており、`changed`が1つも発生していないことが確認できるかと思います。  

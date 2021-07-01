@@ -33,7 +33,9 @@ Step6で作成したインベントリファイルと同様の状態にしてお
 
 ## 4. Playbookを実行
 
-`ansible-playbook -i inventory playbook_kadai-5.yaml`
+```bash
+ansible-playbook -i inventory playbook_kadai-5.yaml
+```
 
 ## 5. 取得したファイルの確認
 

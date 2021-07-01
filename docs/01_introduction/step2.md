@@ -10,7 +10,9 @@ Start - [1](step1.md) - [**2**](step2.md) - [3](step3.md) - [4](step4.md) - [5](
 
 2. ファイルを作成する  
    以下のコマンドを実行してください。  
-   `echo "test" > test_file`  
+   ```bash
+   echo "test" > test_file
+   ```
    左のサイドバーに表示されている`01_introduction`ディレクトリ内に`test_file`というファイルが作成されます。
 
 3. VSCodeでファイルの中身を確認する  
@@ -21,12 +23,16 @@ Start - [1](step1.md) - [**2**](step2.md) - [3](step3.md) - [4](step4.md) - [5](
    ターミナルから`vi`等での編集も可能ですが、本演習では基本的にVSCodeを使用します。  
    手順3で開いた`test`とだけ書かれているファイルを適当に書き換えてください。  
    書き換えたら<kbd>Ctrl</kbd>+<kbd>S</kbd>でファイルを保存し、以下のコマンドを実行してください。  
-   `cat test_file`  
+   ```bash
+   cat test_file
+   ```
    ターミナルに書き換えた内容が出力されます。
 
 5. ファイルを削除する  
    以下のコマンドを実行してください。  
-   `rm -f test_file`  
+   ```bash
+   rm -f test_file
+   ```
    `test_file`ファイルが削除されます。VSCode上からもファイル名が消えていることが確認できます。
 
 :warning:  

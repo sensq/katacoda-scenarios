@@ -37,23 +37,38 @@ shellモジュールは、使うと必ずchangedになってしまう（＝毎�
 
 以下の順番で実行してください。
 
-過去の実行で作成された`resultfile`を削除  
-`ssh target01 -i /root/.ssh/test_key "rm -f ~/resultfile"`  
-`ssh target02 -i /root/.ssh/test_key "rm -f ~/resultfile"`
+過去の実行で作成された`resultfile`を削除
 
-Playbookを実行  
-`ansible-playbook -i inventory playbook_kadai-6-2.yaml`
+```bash
+ssh target01 -i /root/.ssh/test_key "rm -f ~/resultfile"
+ssh target02 -i /root/.ssh/test_key "rm -f ~/resultfile"
+```
 
-`resultfile`が作成されたことを確認  
-`ssh target01 -i /root/.ssh/test_key "cat ~/resultfile"`  
-`ssh target02 -i /root/.ssh/test_key "cat ~/resultfile"`
+Playbookを実行
 
-Playbookを再実行し、skippingになることを確認  
-`ansible-playbook -i inventory playbook_kadai-6-2.yaml`
+```bash
+ansible-playbook -i inventory playbook_kadai-6-2.yaml
+```
 
-`resultfile`に1行しかホスト名の記載された行が無いことを確認  
-`ssh target01 -i /root/.ssh/test_key "cat ~/resultfile"`  
-`ssh target02 -i /root/.ssh/test_key "cat ~/resultfile"`
+`resultfile`が作成されたことを確認
+
+```bash
+ssh target01 -i /root/.ssh/test_key "cat ~/resultfile"
+ssh target02 -i /root/.ssh/test_key "cat ~/resultfile"
+```
+
+Playbookを再実行し、skippingになることを確認
+
+```bash
+ansible-playbook -i inventory playbook_kadai-6-2.yaml
+```
+
+`resultfile`に1行しかホスト名の記載された行が無いことを確認
+
+```bash
+ssh target01 -i /root/.ssh/test_key "cat ~/resultfile"
+ssh target02 -i /root/.ssh/test_key "cat ~/resultfile"
+```
 
 ---
 

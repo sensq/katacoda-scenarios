@@ -7,7 +7,9 @@ Start - [1](step1.md) - [2](step2.md) - [3](step3.md) - [4](step4.md) - [**5**](
 
 ## 1. Playbookの確認
 
-`cat playbook_sample.yaml`
+```bash
+cat playbook_sample.yaml
+```
 
 インベントリに記載されているホストすべてに`common`ロールを実行するPlaybookであることがわかります。
 
@@ -16,12 +18,16 @@ Start - [1](step1.md) - [2](step2.md) - [3](step3.md) - [4](step4.md) - [**5**](
 上記で確認した`common`ロールの中身を確認していきます。
 まずは`main.yaml`を確認してください。
 
-`cat roles/common/tasks/main.yaml`
+```bash
+cat roles/common/tasks/main.yaml
+```
 
 `include: task_sample.yaml`と記載されていることから、次に`task_sample.yaml`が実行されるであろうことが予想できると思います。  
 次に`task_sample.yaml`を確認してください。
 
-`cat roles/common/tasks/task_sample.yaml`
+```bash
+cat roles/common/tasks/task_sample.yaml
+```
 
 このファイルには`copy`モジュールのタスクが定義されており、`files/copytestfile`ファイルをターゲットの`/tmp`へ配置していることがわかります。  
 `main.yaml`で`include`しているのはこのファイルのみのため、このロールで実行される処理は上記のみであることがわかります。  

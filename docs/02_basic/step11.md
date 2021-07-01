@@ -27,7 +27,9 @@ Start - [1](step1.md) - [2](step2.md) - [3](step3.md) - [4](step4.md) - [5](step
 
 ## 3. Playbookを実行
 
-`ansible-playbook -i inventory playbook_kadai-6-1.yaml`
+```bash
+ansible-playbook -i inventory playbook_kadai-6-1.yaml
+```
 
 :warning:  
 このPlaybookは冪等性を考慮していない構成になっているはずなので、何度か実行して毎回`changed`が発生してしまうことも確認しておくとよいです。  
@@ -40,11 +42,15 @@ Start - [1](step1.md) - [2](step2.md) - [3](step3.md) - [4](step4.md) - [5](step
 
 ### 1号機
 
-`ssh target01 -i /root/.ssh/test_key "cat resultfile"`
+```bash
+ssh target01 -i /root/.ssh/test_key "cat resultfile"
+```
 
 ### 2号機
 
-`ssh target02 -i /root/.ssh/test_key "cat resultfile"`
+```bash
+ssh target02 -i /root/.ssh/test_key "cat resultfile"
+```
 
 ---
 

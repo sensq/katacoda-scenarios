@@ -9,7 +9,10 @@ Start - [1](step1.md) - [2](step2.md) - [3](step3.md) - [**4**](step4.md) - [5](
 
 1. エディタ上の`inventory`ファイルをクリックし、ファイルの中身を確認します
 2. `ansible-inventory`コマンドでもインベントリを確認できることを確認します  
-`ansible-inventory -i inventory --list -y`
+
+```bash
+ansible-inventory -i inventory --list -y
+```
 
 ## 2. Ansibleの設定ファイル確認
 
@@ -18,7 +21,10 @@ Ansibleの設定ファイルの確認方法を学びます。
 
 1. エディタ上の`ansible.cfg`ファイルをクリックし、ファイルの中身を確認します
 2. `ansible-config view`コマンドでもインベントリを確認できることを確認します  
-`ansible-config view`
+
+```bash
+ansible-config view
+```
 
 ## 3. サンプルのPlaybookを実行する
 
@@ -31,7 +37,10 @@ Playbookを実行する方法について学びます。
     * 「何を」実行するのかをPlaybookで指定する
 
 以下のコマンドを実行することで、サンプルのPlaybookが実行されます。  
-`ansible-playbook -i inventory playbook_sample.yaml`
+
+```bash
+ansible-playbook -i inventory playbook_sample.yaml
+```
 
 ---
 

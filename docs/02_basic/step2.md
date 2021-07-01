@@ -30,7 +30,9 @@ Start - [1](step1.md) - [**2**](step2.md) - [3](step3.md) - [4](step4.md) - [5](
 
 ## 3. Playbookを実行
 
-`ansible-playbook -i inventory playbook_kadai-1.yaml`
+```bash
+ansible-playbook -i inventory playbook_kadai-1.yaml
+```
 
 ## 4. 取得したファイルの確認
 

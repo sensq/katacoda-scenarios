@@ -11,14 +11,19 @@ bash /tools/setup.sh && source /etc/profile.d/init-env.sh
 
 2. カレントディレクトリを`~/training/02_basic`に変更します
 
-`cd ~/training/02_basic`  
+```bash
+cd ~/training/02_basic
+```
+
 以降、本演習では特に指示がない限り、上記ディレクトリをカレントディレクトリとした状態で作業することを前提とします。  
 テキスト中で「カレントディレクトリ」と記載している場合のディレクトリも上記のディレクトリを指します。  
 異なったディレクトリで記載通りのコマンドを実行すると失敗することがあるため、カレントディレクトリを変更した際はご注意ください。
 
 3. Ansibleが実行できることを確認します
 
-`ansible -m ping -i inventory all`
+```bash
+ansible -m ping -i inventory all
+```
 
 以下の環境が構築されます。
 

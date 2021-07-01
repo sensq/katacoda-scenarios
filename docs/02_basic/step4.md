@@ -39,7 +39,9 @@ Ansible実行後にターゲットサーバに配置されていることを確�
 
 ## 4. Playbookを実行
 
-`ansible-playbook -i inventory playbook_kadai-2.yaml`
+```bash
+ansible-playbook -i inventory playbook_kadai-2.yaml
+```
 
 ## 5. 配置したファイルの確認
 
@@ -48,26 +50,42 @@ Ansible実行後にターゲットサーバに配置されていることを確�
 
 ### 1号機
 
-`ssh target01 -i /root/.ssh/test_key`  
-`ls /tmp`  
-`cat /tmp/copy_file`  
-`exit`
+```bash
+ssh target01 -i /root/.ssh/test_key
+```
+
+```bash
+ls /tmp
+cat /tmp/copy_file
+exit
+```
 
 :warning:  
 sshコマンドは引数にシェルコマンドを渡すと、リモート先でシェルコマンドを実行した結果が返ってきます。  
 これを利用することで上記の確認操作を以下のように簡略化できます。  
-`ssh target01 -i /root/.ssh/test_key "cat /tmp/copy_file"`
+
+```bash
+ssh target01 -i /root/.ssh/test_key "cat /tmp/copy_file"
+```
 
 ### 2号機
 
-`ssh target02 -i /root/.ssh/test_key`  
-`ls /tmp`  
-`cat /tmp/copy_file`  
-`exit`
+```bash
+ssh target02 -i /root/.ssh/test_key
+```
+
+```bash
+ls /tmp
+cat /tmp/copy_file
+exit
+```
 
 :warning:  
-上記と同様に、SSHの対象を変更すれば確認操作を簡略化できます。  
-`ssh target02 -i /root/.ssh/test_key "cat /tmp/copy_file"`
+上記と同様に、SSHの対象を変更すれば確認操作を簡略化できます。
+
+```bash
+ssh target02 -i /root/.ssh/test_key "cat /tmp/copy_file"
+```
 
 ---
 
