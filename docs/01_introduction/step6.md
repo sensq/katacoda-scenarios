@@ -12,10 +12,16 @@ Webサーバを稼働するURLへアクセスし、アクセスできないこ�
 2. ブラウザでWebサーバ2号機（`演習環境のURL:8083`）にアクセスし、アクセスできないことを確認する
 3. ブラウザでWebサーバ3号機（`演習環境のURL:8084`）にアクセスし、アクセスできないことを確認する
 
+:warning:補足  
+`http://hoge-url`で演習環境にアクセスしている場合は`http://hoge-url:8082`のようなURLにアクセスします。
+
 ## 2. Playbookの実行
 
-以下のコマンドを実行してください。  
-`ansible-playbook -i inventory playbook_nginx.yaml`
+以下のコマンドを実行してください。
+
+```bash
+ansible-playbook -i inventory playbook_nginx.yaml
+```
 
 ## 3. 実行後の確認
 
