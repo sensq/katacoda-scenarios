@@ -17,6 +17,12 @@ locals {
   instance_type        = "t2.small"
   instance_volume_type = "gp2"
   instance_volume_size = 8
+  user_data            = <<EOF
+#!/bin/bash
+rm -rf /tmp/*
+rm -rf /root/.ssh/known_hosts
+rm -rf /root/.bash_history
+  EOF
 
   ports = {
     code_server  = 80

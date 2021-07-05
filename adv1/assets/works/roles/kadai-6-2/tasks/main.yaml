@@ -1,1 +1,2 @@
-- include: shell.yaml
+- name: シェルコマンドを実行するタスク
+  shell: hostname >> ~/resultfile

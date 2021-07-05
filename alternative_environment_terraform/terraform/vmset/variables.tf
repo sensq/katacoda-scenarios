@@ -36,6 +36,11 @@ variable "associate_public_ip_address" {
   type        = bool
 }
 
+variable "user_data" {
+  description = "インスタンス作成時に実行するユーザデータ"
+  type        = string
+}
+
 variable "root_block_device" {
   description = "作成するインスタンスのEBS設定"
   type = object({
