@@ -17,12 +17,6 @@ locals {
   instance_type        = "t2.small"
   instance_volume_type = "gp2"
   instance_volume_size = 8
-  user_data            = <<EOF
-#!/bin/bash
-rm -rf /tmp/*
-rm -rf /root/.ssh/known_hosts
-rm -rf /root/.bash_history
-  EOF
 
   ports = {
     code_server  = 80
@@ -106,6 +100,13 @@ module "vmset" {
   subnet_id                   = aws_subnet.this.id
   associate_public_ip_address = true
   iam_instance_profile        = module.ec2_ssm_profile.name
+  user_data                   = <<EOF
+#!/bin/bash
+rm -rf /tmp/*
+find /var/log -type f -regex ".*\-[0-9]+$" -delete
+rm -rf /root/.ssh/known_hosts
+rm -rf /root/.bash_history
+  EOF
   tags                        = local.tags
 
   root_block_device = {
