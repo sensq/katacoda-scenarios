@@ -26,15 +26,15 @@ all:
     target01:
       ansible_port: 2222
       ansible_user: hoge
-      server_hostname: target-server-01  # 課題3で使用した変数
-      fetch_files:  # ココからの2行はハイフンから始まっている
+      server_hostname: target-server-01  # 課題3で使用した変数（マップ）
+      fetch_files:  # ココからの2行はハイフンから始まっている（配列）
         - /etc/passwd
         - /etc/ssh/sshd_config
     target02:
       ansible_port: 2223
       ansible_user: foo
-      server_hostname: target-server-02  # 課題3で使用した変数
-      fetch_files:  # ココからの3行はハイフンから始まっている
+      server_hostname: target-server-02  # 課題3で使用した変数（マップ）
+      fetch_files:  # ココからの3行はハイフンから始まっている（配列）
         - /etc/group
         - /etc/profile
         - /proc/cpuinfo
