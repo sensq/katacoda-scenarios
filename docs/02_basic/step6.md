@@ -19,11 +19,11 @@ Start - [1](step1.md) - [2](step2.md) - [3](step3.md) - [4](step4.md) - [5](step
 ## 2. インベントリファイルに変数を定義
 
 Ansibleでの変数定義の方法はいくつかあり、一般的にはhost_varsやgroup_varsといったものがよく使われます。  
-ただし、今回は演習の進行の都合上、インベントリファイルに記載する方法で定義することにします。
+ただし、今回は変数の概念を理解してもらいたいため、インベントリファイルに記載するシンプルな方法で定義することにします。
 
 :warning:  
 この方法はシンプルではありますが、ターゲットサーバや変数が多くなるとインベントリファイルが肥大化して見通しが悪くなるデメリットがあります。  
-実際にAnsibleを使う際はどのように変数定義を行って管理していくかなどのルールも決めておく必要があることを理解しておくとよいです。
+実際にAnsibleを使う際はどのように変数定義を行って管理していくかなどのルールも決めておく必要があることを認識しておくとよいです。
 
 カレントディレクトリ直下の`inventory`ファイルに以下をコピペします。
 
@@ -33,11 +33,11 @@ all:
     target01:  # hostごとの変数
       ansible_port: 2222
       ansible_user: hoge
-      server_location: 新宿
+      server_hostname: target-server-01
     target02:  # hostごとの変数
       ansible_port: 2223
       ansible_user: foo
-      server_location: 豊洲
+      server_hostname: target-server-02
   vars:  # 共通の変数
     ansible_ssh_private_key_file: ~/.ssh/test_key
 ```
@@ -48,8 +48,7 @@ all:
 
 ```text
 ターゲットサーバに配置されるファイルです。
-このサーバのホスト名は「{{ ansible_hostname }}」です。
-このサーバは「{{ server_location }}」に設置されています。
+このサーバのホスト名は「{{ server_hostname }}」です。
 Ansible実行後にターゲットサーバに配置されていることを確認してください。
 ```
 

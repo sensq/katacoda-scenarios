@@ -26,14 +26,14 @@ all:
     target01:  # hostごとの変数
       ansible_port: 2222
       ansible_user: hoge
-      server_location: 新宿
+      server_hostname: target-server-01
       fetch_files:
         - /etc/passwd
         - /etc/ssh/sshd_config
     target02:  # hostごとの変数
       ansible_port: 2223
       ansible_user: foo
-      server_location: 豊洲
+      server_hostname: target-server-02
       fetch_files:
         - /etc/group
         - /etc/profile
@@ -41,14 +41,6 @@ all:
   vars:  # 共通の変数
     ansible_ssh_private_key_file: ~/.ssh/test_key
 ```
-
-:warning: 配列とマップについて  
-上記ファイルの8-9行目と15-17行目の値には変数名を付けておらず、代わりにハイフンのみを記載しています。  
-これは一般的なプログラミング言語でも頻繁に使われる「配列」と呼ばれるデータ型であり、なんらかの共通の意味を持った複数の値をまとめて扱いたい場合などに利用されることが多いです。  
-一方で、その他の値は「マップ」と呼ばれるKey-Value形式のデータ型で定義されています（ハッシュ、連想配列などとも言われる）  
-マップは構造を持ったデータ型であり、多くのデータをわかりやすくて参照しやすい表現方法で定義できるというメリットがあります。  
-また、配列とマップは複合的に定義することが可能であるため、上記のようにマップの中に配列を定義することも、マップを配列で複数定義することも可能です。  
-例えば上記ファイルの16行目は`all.hosts.target02.fetch_files[1]`のように指定すれば`/etc/profile`という値を参照することができます。
 
 ## 3. タスクの作成
 

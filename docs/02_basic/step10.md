@@ -18,7 +18,29 @@ Start - [1](step1.md) - [2](step2.md) - [3](step3.md) - [4](step4.md) - [5](step
 
 ## 2. インベントリファイルに変数を定義
 
-Step6で作成したインベントリファイルと同様の状態にしておいてください。
+Step8で作成したインベントリファイルと同様の状態にしておいてください。
+
+```yaml
+all:
+  hosts:
+    target01:  # hostごとの変数
+      ansible_port: 2222
+      ansible_user: hoge
+      server_hostname: target-server-01
+      fetch_files:
+        - /etc/passwd
+        - /etc/ssh/sshd_config
+    target02:  # hostごとの変数
+      ansible_port: 2223
+      ansible_user: foo
+      server_hostname: target-server-02
+      fetch_files:
+        - /etc/group
+        - /etc/profile
+        - /proc/cpuinfo
+  vars:  # 共通の変数
+    ansible_ssh_private_key_file: ~/.ssh/test_key
+```
 
 ## 3. タスクの作成
 
@@ -26,7 +48,9 @@ Step6で作成したインベントリファイルと同様の状態にしてお
 実装の要件は以下の通りです。
 
 * `fetch`モジュールを使うこと
-* `server_location`の値が「豊洲」になっているターゲットサーバからのみ、`/etc/passwd`ファイルを取得すること
+* `when`を使って、target01のサーバからのみ、`/etc/passwd`ファイルを取得すること
+  * 何を条件にするかはお任せします。
+  * インベントリからtarget02を消すなど、そもそもtarget02への実行を行わなくさせるのは禁止です
 * 取得したファイルはカレントディレクトリ直下の`kadai-5_fetch_files`というディレクトリに配置すること
 
 回答例は次のページに記載していますが、どうしても上手くいかない場合にだけ参考にしてください。
@@ -37,10 +61,13 @@ Step6で作成したインベントリファイルと同様の状態にしてお
 ansible-playbook -i inventory playbook_kadai-5.yaml
 ```
 
+target02への実行がskipになることを確認してください。
+
 ## 5. 取得したファイルの確認
 
 Playbookを実行すると、カレントディレクトリ直下に`kadai-5_fetch_files`というディレクトリが表示されます。  
-その中に`server_location: 豊洲`と記載したターゲットサーバ（＝2号機）から取得したファイルのみが入っていることを確認してください。  
+その中にtarget01から取得したファイルのみが入っていることを確認してください。  
+なお、一度取得したファイルは自動で消えないため、コードを書き間違えてtarget02へ実行してしまった場合は再実行する前に手動で`kadai-5_fetch_files`ディレクトリを削除してください。
 
 ※ディレクトリが表示されない場合は、エディタ上の以下の位置にある更新ボタンを押してください。
 
