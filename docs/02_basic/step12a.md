@@ -11,7 +11,7 @@
   register: stat_resultfile  # タスクの実行結果を変数に登録する
 
 - name: シェルコマンドを実行するタスク
-  shell: hostname > ~/resultfile
+  shell: hostname >> ~/resultfile
   when:
     - not stat_resultfile.stat.exists  # registerで登録した値を冪等性を保つための条件に使う
 ```
