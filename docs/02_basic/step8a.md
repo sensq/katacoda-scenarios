@@ -58,15 +58,22 @@ all:
       ansible_port: 2222
       ansible_user: hoge
       server_hostname: target-server-01  # 課題3で使用した変数
-      fetch_files:  # ココからの2行はハイフンから始まっている
+      fetch_files:
         - path: /etc/passwd
-          dest: /tmp/foo
+          dest: /tmp/test4/foo
         - path: /etc/ssh/sshd_config
-          dest: /tmp/bar
+          dest: /tmp/test4/bar
     target02:
       ansible_port: 2223
       ansible_user: foo
-      # 以下省略
+      server_hostname: target-server-02
+      fetch_files:
+        - path: /etc/group
+          dest: /tmp/test4/foo
+        - path: /etc/profile
+          dest: /tmp/test4/bar
+        - path: /proc/cpuinfo
+          dest: /tmp/test4/hoge
   vars:
     ansible_ssh_private_key_file: ~/.ssh/test_key
 ```
@@ -79,6 +86,15 @@ all:
     src: "{{ item.path }}"
     dest: "{{ item.dest }}"
   loop: "{{ fetch_files }}"
+```
+
+以下でPlaybookを実行し、指定した通りにファイルを取得できていることを確認してみてください。
+
+```bash
+# Playbook実行
+ansible-playbook -i inventory playbook_kadai-4.yaml
+# 取得確認
+tree /tmp/test4/
 ```
 
 ---

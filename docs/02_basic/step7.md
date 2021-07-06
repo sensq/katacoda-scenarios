@@ -29,7 +29,7 @@ Start - [1](step1.md) - [2](step2.md) - [3](step3.md) - [4](step4.md) - [5](step
 
 ```yaml
 # sato, suzuki, takahashiユーザを作成
-- name: "Add {{ item }} user"
+- name: "Add users"
   user:
     name: "{{ item }}"
   loop:
