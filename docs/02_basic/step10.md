@@ -44,7 +44,7 @@ all:
 
 ## 3. タスクの作成
 
-[fetchモジュールのドキュメント](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html)と[条件のドキュメント](https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_conditionals.html)を参考に、`roles/kadai-5/tasks/main.yaml`へタスクを作成します。  
+「[fetchモジュールのドキュメント](https://docs.ansible.com/ansible/2.9_ja/modules/fetch_module.html)」と「[条件のドキュメント](https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_conditionals.html)」を参考に、`roles/kadai-5/tasks/main.yaml`へタスクを作成します。  
 実装の要件は以下の通りです。
 
 * `fetch`モジュールを使うこと
