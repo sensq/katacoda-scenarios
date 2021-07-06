@@ -52,6 +52,12 @@ ssh target01 -i /root/.ssh/test_key "cat resultfile"
 ssh target02 -i /root/.ssh/test_key "cat resultfile"
 ```
 
+以下でも確認可能です。
+
+```bash
+ansible -m shell -a "sudo cat /root/resultfile" -i inventory all
+```
+
 ---
 
 - [前のページに戻る](step10a.md)
