@@ -31,12 +31,35 @@ ansible -m ping -i inventory all
 各ターゲットへSSHで接続する際は、以下のコマンドを実行してください。  
 SSHから抜ける際は`exit`コマンドを実行すると元のコンソールへ戻ることができます。
 
-1号機: `ssh target01 -i /root/.ssh/test_key`  
-`exit`  
-2号機: `ssh target02 -i /root/.ssh/test_key`  
-`exit`  
-3号機: `ssh target03 -i /root/.ssh/test_key`  
-`exit`  
+1号機
+
+```bash
+ssh target01 -i /root/.ssh/test_key
+```
+
+```bash
+exit
+```
+
+2号機
+
+```bash
+ssh target02 -i /root/.ssh/test_key
+```
+
+```bash
+exit
+```
+
+3号機
+
+```bash
+ssh target03 -i /root/.ssh/test_key
+```
+
+```bash
+exit
+```
 
 ---
 

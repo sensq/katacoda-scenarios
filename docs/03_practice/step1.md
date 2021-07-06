@@ -1,6 +1,3 @@
-Start - [**1**](step1.md) - [2](step2.md) - [3](step3.md) - [4](step4.md) - [5](step5.md) - [6](step6.md) - [7](step7.md) - [8](step8.md) - [9](step9.md) - [10](step10.md) - [11](step11.md) - [12](step12.md) - End
-
-
 # 環境を準備する
 
 1. 以下のコマンドを実行します
@@ -9,10 +6,10 @@ Start - [**1**](step1.md) - [2](step2.md) - [3](step3.md) - [4](step4.md) - [5](
 bash /tools/setup.sh && source /etc/profile.d/init-env.sh
 ```
 
-2. カレントディレクトリを`/training/02_basic`に変更します
+2. カレントディレクトリを`/training/03_practice`に変更します
 
 ```bash
-cd /training/02_basic
+cd /training/03_practice
 ```
 
 以降、本演習では特に指示がない限り、上記ディレクトリをカレントディレクトリとした状態で作業することを前提とします。  

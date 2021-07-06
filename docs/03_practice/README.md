@@ -9,10 +9,9 @@
 
 ## 目次
 
-1. [環境を準備する](hoge.md)
-1. [Roleを使って実用的なPlaybookを実装する](hoge.md)
-1. [クイズ解説](hoge.md)
-1. [Roleのベストプラクティス構成](hoge.md)
-1. [Roleに変数を定義する](hoge.md)
-1. [Roleを使う](hoge.md)
-1. [まとめクイズ](hoge.md)
+1. [環境を準備する](step1.md)
+1. [Roleを使って実用的なPlaybookを実装する](step2.md)
+1. [Roleのベストプラクティス構成](step3.md)
+1. [Roleに変数を定義する](step4.md)
+1. [Roleを使う](step5.md)
+1. [まとめクイズ](step6.md)
