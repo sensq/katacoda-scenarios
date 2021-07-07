@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# git, dockerインストール
+# git, docker, treeインストール
 yum install -y git
 yum install -y docker
+yum install -y tree
 
 # docker-composeインストールとコマンド補完設定
 curl -L https://github.com/docker/compose/releases/download/1.28.5/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
