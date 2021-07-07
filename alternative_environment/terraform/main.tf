@@ -8,7 +8,7 @@ provider "aws" {
 locals {
   # 頻繁に変更する値
   set_num = 1                       # 作成したい台数を指定
-  ami_id  = "ami-078d0761ca92c1e2a" # 任意のAMI IDを指定
+  ami_id  = "ami-06631ebafb3ae5d34" # 任意のAMI IDを指定
 
   # 一度決めたら基本的に変更不要な値
   vpc_id               = "vpc-6c712805"    # インスタンスを配置する適当なVPCのIDを指定

@@ -2,7 +2,7 @@
 version: "2.1"
 services:
   target-server-01:
-    image: ghcr.io/linuxserver/openssh-server
+    image: ghcr.io/linuxserver/openssh-server:8.4_p1-r3-ls49
     container_name: target-server-01
     hostname: target-server-01 #optional
     environment:
@@ -21,7 +21,7 @@ services:
       - 8082:80
     restart: unless-stopped
   target-server-02:
-    image: ghcr.io/linuxserver/openssh-server
+    image: ghcr.io/linuxserver/openssh-server:8.4_p1-r3-ls49
     container_name: target-server-02
     hostname: target-server-02 #optional
     environment:
@@ -40,7 +40,7 @@ services:
       - 8083:80
     restart: unless-stopped
   target-server-03:
-    image: ghcr.io/linuxserver/openssh-server
+    image: ghcr.io/linuxserver/openssh-server:8.4_p1-r3-ls49
     container_name: target-server-03
     hostname: target-server-03 #optional
     environment:

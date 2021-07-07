@@ -1,0 +1,33 @@
+{
+  "window.autoDetectColorScheme": false,
+  "window.openFoldersInNewWindow": "off",
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "workbench.colorCustomizations": {},
+  "editor.cursorWidth": 3,
+  "editor.minimap.showSlider": "always",
+  "editor.semanticHighlighting.enabled": true,
+  "editor.renderLineHighlight": "all",
+  "editor.renderWhitespace": "all",
+  "editor.tokenColorCustomizations": {
+      "semanticHighlighting": true
+  },
+  "files.autoSave": "off",
+  "files.exclude": {
+    "**/.*": true
+  },
+  "terminal.integrated.defaultProfile.linux": "Bash",
+  "terminal.integrated.profiles.linux": {
+    "Bash": {
+      "path": "/bin/bash",
+      "args": ["-l"]
+    }
+  },
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.15)",
+    "rgba(127,255,127,0.15)",
+    "rgba(255,127,255,0.15)",
+    "rgba(79,236,236,0.15)"
+  ]
+}

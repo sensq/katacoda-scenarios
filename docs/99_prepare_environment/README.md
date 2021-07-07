@@ -25,7 +25,7 @@ systemctl start docker
 systemctl enable docker
 
 # Ansibleインストール
-amazon-linux-extras -y install epel
+amazon-linux-extras install -y epel
 yum install -y ansible
 
 # 資材の配置（見直し予定）
@@ -53,6 +53,7 @@ systemctl start code-server@root
 systemctl enable code-server@root
 ## 必要あれば設定を変更する
 vi ~/.config/code-server/config.yaml
+mkdir -p /root/.local/share/code-server/User/
 vi /root/.local/share/code-server/User/settings.json
 systemctl restart code-server@root
 
@@ -66,7 +67,7 @@ touch /completed
     * OS設定は上記の「環境の構築」と同様に行う
 2. 上記インスタンスからAMIを作成する
 3. 演習環境インスタンスを配置するVPCを作成する
-4. `alternative_environment_terraform/terraform`のTerraformを実行する
+4. `alternative_environment/terraform`のTerraformを実行する
     * `main.tf`の`locals`ブロックの変数を適宜書き換える
     * 必要があれば、その他の部分も書き換える
     * `terraform apply`を実行する
