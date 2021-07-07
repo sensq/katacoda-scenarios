@@ -53,8 +53,8 @@ code-server --install-extension oderwat.indent-rainbow
 code-server --install-extension PKief.material-icon-theme
 ## 設定変更（ポートやパスワードは後から手動で変更）
 mkdir -p /root/.local/share/code-server/User/
-cp -f /katacoda-scenarios/alternative_environment/assets/configs/settings.json /root/.local/share/code-server/User/settings.json
-cp -f /katacoda-scenarios/alternative_environment/assets/configs/code-server_config.yaml ~/.config/code-server/config.yaml
+cp -f /configs/settings.json /root/.local/share/code-server/User/settings.json
+cp -f /configs/code-server_config.yaml ~/.config/code-server/config.yaml
 systemctl restart code-server@root
 
 rm -rf /katacoda-scenarios
