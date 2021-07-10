@@ -30,15 +30,21 @@ curl http://localhost:8080
 ```bash
 # NginxコンテナのIDを確認
 docker container ls
+```{{execute}}
+
+```bash
 # ログを出力
 docker logs <NginxコンテナID>
-```{{execute}}
+```{{copy}}
 
 ## Nginxコンテナ削除
 
 ```bash
 # NginxコンテナのIDを確認
 docker container ls
+```{{execute}}
+
+```bash
 # Nginxコンテナ削除
 docker container rm -f <NginxコンテナID>
-```{{execute}}
+```{{copy}}

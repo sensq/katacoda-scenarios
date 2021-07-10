@@ -21,9 +21,12 @@ Pythonコンテナ内のbashを実行し、コンテナの中に入った状態�
 ```bash
 # PythonコンテナのIDを確認
 docker container ls
+```{{execute}}
+
+```bash
 # コンテナ内のbashを実行
 docker exec -it <PythonコンテナID> bash
-```{{execute}}
+```{{copy}}
 
 Pythonコンテナ内のbashが実行された状態になるため、Pythonインタラクティブシェルを実行します。
 
@@ -52,9 +55,12 @@ bashを経由せずに`docker exec`で直接Pythonインタラクティブシェ
 ```bash
 # PythonコンテナのIDを確認
 docker container ls
+```{{execute}}
+
+```bash
 # コンテナ内のPythonインタラクティブシェルを実行
 docker exec -it <PythonコンテナID> python
-```{{execute}}
+```{{copy}}
 
 `exit`コマンドでローカルのコンソールに戻ります。
 
@@ -73,9 +79,12 @@ docker run -v $(pwd)/python_script:/foo python
 ```bash
 # PythonコンテナのIDを確認
 docker container ls
+```{{execute}}
+
+```bash
 # コンテナ内のbashを実行
 docker exec -it <PythonコンテナID> bash
-```{{execute}}
+```{{copy}}
 
 コンテナの中でファイルを確認して実行する。
 
@@ -100,9 +109,12 @@ docker run -e LANG=ja_JP.UTF8 -v $(pwd)/python_script:/foo python
 ```bash
 # PythonコンテナのIDを確認
 docker container ls
+```{{execute}}
+
+```bash
 # コンテナ内のbashを実行
 docker exec -it <PythonコンテナID> bash
-```{{execute}}
+```{{copy}}
 
 コンテナの中でファイルを確認して実行する。
 

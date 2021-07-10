@@ -90,9 +90,12 @@ docker image ls --format "{{json .}}" | jq
 ```bash
 # コンテナのIDを確認
 docker container ls -a
+```{{execute}}
+
+```bash
 # コンテナ削除
 docker container rm <コンテナのIDまたは名前>
-```{{execute}}
+```{{copy}}
 
 :warning:  
 現時点では停止中のコンテナしか存在していませんが、
@@ -120,9 +123,12 @@ docker container ls -a
 ```bash
 # イメージのIDを確認
 docker image ls
+```{{execute}}
+
+```bash
 # イメージ削除
 docker image rm <イメージのIDまたはリポジトリ名＋タグ>
-```{{execute}}
+```{{copy}}
 
 また、以下のようにリポジトリ名とタグを指定して削除することも可能です。
 
