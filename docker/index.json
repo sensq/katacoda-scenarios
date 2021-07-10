@@ -42,7 +42,7 @@
         }
     },
     "environment": {
-        "uilayout": "editor-terminal",
+        "uilayout": "terminal",
         "uieditorpath": "/root/works"
     },
     "backend": {
