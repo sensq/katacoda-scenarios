@@ -137,3 +137,6 @@ docker image rm <イメージのID>
 ```bash
 docker image rm hello-world:latest
 ```{{execute}}
+
+補足  
+削除対象のイメージを使っているコンテナが存在しているとイメージの削除はエラーになります。

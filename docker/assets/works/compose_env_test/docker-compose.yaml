@@ -1,0 +1,9 @@
+version: '3.0'
+services:
+    python:
+        image: python:alpine
+        tty: true
+        volumes:
+            - ./python_script:/script
+        environment:
+            - LANG=${PYTHON_CONTAINER_LANG}

@@ -1,0 +1,13 @@
+version: '3.0'
+services:
+    nginx:
+        image: nginx
+        ports:
+            - 8080:80
+    python:
+        image: python:alpine
+        tty: true
+        volumes:
+            - ./python_script:/script
+        environment:
+            - LANG=ja_JP.UTF8
