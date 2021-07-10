@@ -18,7 +18,7 @@ docker container run nginx
 バックグラウンド実行とポートマッピング
 
 ```bash
-docker container run --name nginx01 -d -p 8080:80 nginx
+docker container run -d -p 8080:80 --name nginx01 nginx
 ```{{execute}}
 
 ```bash
