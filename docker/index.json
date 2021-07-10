@@ -6,20 +6,16 @@
     "details": {
         "steps": [
             {
-                "title": "Step 1",
                 "text": "step1.md",
                 "foreground": "init.sh"
             },
             {
-                "title": "Step2",
                 "text": "step2.md"
             },
             {
-                "title": "Step3",
                 "text": "step3.md"
             },
             {
-                "title": "Step4",
                 "text": "step4.md"
             }
         ],
