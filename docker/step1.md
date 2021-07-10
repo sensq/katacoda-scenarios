@@ -6,12 +6,20 @@ hello-worldのイメージからコンテナを起動します。
 
 ```bash
 docker run hello-world
-```
-{{execute}}
+```{{execute}}
 
 ## コンテナリストを確認する
 
+```bash
+docker container ls -a
+```{{execute}}
+
+
 ## イメージリストを確認する
+
+```bash
+docker image ls -a
+```{{execute}}
 
 ## hello-worldのコンテナを削除する
 
