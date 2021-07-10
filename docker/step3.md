@@ -85,7 +85,7 @@ exit()
 カレントディレクトリから相対パスで指定する場合は`pwd`コマンドを利用すると便利です。
 
 ```bash
-docker container run -dt -v $(pwd)/works/python_script:/foo --name python_test_02 python:alpine
+docker container run -dt -v $(pwd)/python_script:/foo --name python_test_02 python:alpine
 ```{{execute}}
 
 ファイルが置かれていることを確認するため、コンテナ内のbashを実行します。
@@ -143,7 +143,7 @@ exit
 コンテナ起動時に`LANG`環境変数を設定し、実際にコンテナ内で環境変数が設定されていることを確認します。
 
 ```bash
-docker container run -dt -e LANG=ja_JP.UTF8 -v $(pwd)/works/python_script:/foo  --name python_test_03 python:alpine
+docker container run -dt -e LANG=ja_JP.UTF8 -v $(pwd)/python_script:/foo  --name python_test_03 python:alpine
 ```{{execute}}
 
 ```bash
