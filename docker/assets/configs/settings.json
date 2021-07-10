@@ -12,8 +12,5 @@
   "editor.tokenColorCustomizations": {
       "semanticHighlighting": true
   },
-  "files.autoSave": "off",
-  "files.exclude": {
-    "**/.*": true
-  }
+  "files.autoSave": "off"
 }
