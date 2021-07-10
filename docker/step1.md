@@ -9,7 +9,7 @@ hello-worldイメージからコンテナを起動します。
 なお、`docker pull`コマンドを使用することでコンテナを起動せずにイメージのPullだけを行うこともできます。
 
 ```bash
-docker run hello-world
+docker container run hello-world
 ```{{execute}}
 
 hello-worldイメージはコンソール上に文章を出力したら終了するだけのイメージなため、
@@ -92,12 +92,13 @@ docker image ls --format "{{json .}}" | jq
 docker container ls -a
 ```{{execute}}
 
+コンテナ削除
+
 ```bash
-# コンテナ削除
 docker container rm <コンテナのIDまたは名前>
 ```{{copy}}
 
-:warning:  
+注意  
 現時点では停止中のコンテナしか存在していませんが、
 稼働中のコンテナを削除したい場合は`docker container stop`コマンドで事前にコンテナを停止するか、`docker image rm`コマンドに`-f`オプションを付与して実行する必要があります。
 
@@ -110,7 +111,7 @@ docker container rm <コンテナのIDまたは名前>
 # 事前確認
 docker container ls -a
 # コンテナ起動
-docker run --rm hello-world
+docker container run --rm hello-world
 # 終了状態のコンテナが存在してないことを確認
 docker container ls -a
 ```{{execute}}
@@ -125,12 +126,13 @@ docker container ls -a
 docker image ls
 ```{{execute}}
 
+イメージ削除
+
 ```bash
-# イメージ削除
-docker image rm <イメージのIDまたはリポジトリ名＋タグ>
+docker image rm <イメージのID>
 ```{{copy}}
 
-また、以下のようにリポジトリ名とタグを指定して削除することも可能です。
+または、以下のようにリポジトリ名とタグを指定して削除することも可能です。
 
 ```bash
 docker image rm hello-world:latest

@@ -12,13 +12,13 @@
 まず、普通にNginxコンテナを起動してみます。
 
 ```bash
-docker run nginx
+docker container run nginx
 ```{{execute}}
 
 バックグラウンド実行とポートマッピング
 
 ```bash
-docker run -d -p 8080:80 nginx
+docker container run --name nginx01 -d -p 8080:80 nginx
 ```{{execute}}
 
 ```bash
@@ -28,23 +28,21 @@ curl http://localhost:8080
 ## コンテナのログを確認する
 
 ```bash
-# NginxコンテナのIDを確認
-docker container ls
+docker container logs nginx01
+```{{execute}}
+
+再度curlでアクセスし、アクセスログが増えていることを確認する。
+
+```bash
+curl http://localhost:8080
 ```{{execute}}
 
 ```bash
-# ログを出力
-docker logs <NginxコンテナID>
-```{{copy}}
+docker container logs nginx01
+```{{execute}}
 
 ## Nginxコンテナ削除
 
 ```bash
-# NginxコンテナのIDを確認
-docker container ls
+docker container rm -f nginx01
 ```{{execute}}
-
-```bash
-# Nginxコンテナ削除
-docker container rm -f <NginxコンテナID>
-```{{copy}}
