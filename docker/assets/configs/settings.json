@@ -1,0 +1,19 @@
+{
+  "window.autoDetectColorScheme": false,
+  "window.openFoldersInNewWindow": "off",
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.startupEditor": "none",
+  "workbench.colorCustomizations": {},
+  "editor.cursorWidth": 3,
+  "editor.minimap.showSlider": "always",
+  "editor.semanticHighlighting.enabled": true,
+  "editor.renderLineHighlight": "all",
+  "editor.renderWhitespace": "all",
+  "editor.tokenColorCustomizations": {
+      "semanticHighlighting": true
+  },
+  "files.autoSave": "off",
+  "files.exclude": {
+    "**/.*": true
+  }
+}
