@@ -78,9 +78,9 @@ docker-compose exec python_02 ping python_01 -c 4
 
 ```bash
 docker-compose exec python_01 ip a
-```bash
-
 ```{{execute}}
+
+```bash
 docker-compose exec python_02 ip a
 ```{{execute}}
 
