@@ -147,6 +147,7 @@ cd ~/works
 ## envファイルにパラメータを外出しする
 
 ```bash
+cd compose_env_test
 docker-compose --env-file env_file up -d
 ```{{execute}}
 
