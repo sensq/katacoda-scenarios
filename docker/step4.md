@@ -78,6 +78,9 @@ docker-compose exec python_02 ping python_01 -c 4
 
 ```bash
 docker-compose exec python_01 ip a
+```bash
+
+```{{execute}}
 docker-compose exec python_02 ip a
 ```{{execute}}
 
@@ -122,6 +125,9 @@ IPを確認し、2つのコンテナが異なるネットワークに存在し�
 cd ../
 cd a_network
 docker-compose exec python_01 ip a
+```{{execute}}
+
+```bash
 cd ../b_network
 docker-compose exec python_02 ip a
 ```{{execute}}
