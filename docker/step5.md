@@ -32,3 +32,60 @@ docker image ls
 ```bash
 docker-compose build
 ```{{execute}}
+
+また、Docker Composeではビルドと起動を同時に行うことも可能です。  
+`build_image/docker-compose.yaml`には`image`のパラメータが無く、ビルド定義しか記述されていませんが、
+この状態で`up`コマンドを実行するとビルドを行った後にそのイメージでコンテナが作成されます。  
+また、すでにイメージがビルド済みで再ビルドの作成が不要な場合はビルド処理が省略されてコンテナが作成されます。
+
+```bash
+docker-compose up -d
+```{{execute}}
+
+なお、この際に作成されるイメージの名前は自動的に「ディレクトリ名＋サービス名」になります。  
+任意の名前で固定したい場合は`image`のパラメータを併記すると、そのパラメータで指定された名前でイメージが作成されます。  
+以下のように`build_image/docker-compose.yaml`を書き換えて再度イメージを作成してみてください。
+
+```yaml
+version: '3.0'
+services:
+  bash_alpine:
+    build: .
+    image: bash_alpine
+    tty: true
+    volumes:
+      - ./python_script:/script
+    environment:
+      - LANG=${PYTHON_CONTAINER_LANG}
+```{{copy}}
+
+```bash
+docker-compose build
+```{{execute}}
+
+```bash
+docker image ls
+```{{execute}}
+
+## コンテナイメージビルドについての補足
+
+`docker image ls`でイメージを確認すると、今回ビルドしたイメージはすべてイメージIDが同一になっていることを確認できます。  
+これは名前（タグ）が異なるだけで中身は同じということを表しています。  
+なお、この場合はイメージIDを指定してのイメージ削除などはエラーになります。  
+「イメージ名＋タグ」で指定する方法でコマンドを実行してください。
+
+```bash
+# latestタグのついたbash_alpineイメージを削除したい場合のコマンド例
+docker image rm bash_alpine:latest
+```{{execute}}
+
+```bash
+# 削除されたことの確認
+docker image ls
+```{{execute}}
+
+※注意  
+詳細は割愛しますが、同じイメージIDのイメージが複数存在していても、ストレージ容量は1個分しか使われていません（多少の誤差はあると思います）  
+これはイメージの実体がレイヤーの積み重ねであり、同じイメージIDのイメージが参照しているレイヤーは同じものであるという仕様からです。  
+また、イメージIDの異なるイメージでも、差分を辿っていく過程でどこかからか同一のレイヤーを参照している場合もあります。  
+そのため、ストレージの空きを増やすためにイメージを削除しても思ったより使用量が減らないことがあります。
