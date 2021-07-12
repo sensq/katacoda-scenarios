@@ -36,10 +36,22 @@ docker-compose build
 また、Docker Composeではビルドと起動を同時に行うことも可能です。  
 `build_image/docker-compose.yaml`には`image`のパラメータが無く、ビルド定義しか記述されていませんが、
 この状態で`up`コマンドを実行するとビルドを行った後にそのイメージでコンテナが作成されます。  
-また、すでにイメージがビルド済みで再ビルドの作成が不要な場合はビルド処理が省略されてコンテナが作成されます。
+また、すでにイメージがビルド済みで再ビルド不要な場合はビルド処理が省略されてコンテナが作成されます。
 
 ```bash
 docker-compose up -d
+```{{execute}}
+
+実際にbashを実行可能なことを確認します。
+
+```bash
+docker-compose exec bash_alpine bash
+```{{execute}}
+
+実行できたら`exit`でコンテナを抜けます。
+
+```bash
+exit
 ```{{execute}}
 
 なお、この際に作成されるイメージの名前は自動的に「ディレクトリ名＋サービス名」になります。  
@@ -51,7 +63,7 @@ version: '3.0'
 services:
   bash_alpine:
     build: .
-    image: bash_alpine
+    image: bash_alpine:test
     tty: true
     volumes:
       - ./python_script:/script
@@ -67,6 +79,8 @@ docker-compose build
 docker image ls
 ```{{execute}}
 
+イメージ名が`bash_alpine`でタグが`test`のコンテナイメージが作成されたことを確認できます。
+
 ## コンテナイメージビルドについての補足
 
 `docker image ls`でイメージを確認すると、今回ビルドしたイメージはすべてイメージIDが同一になっていることを確認できます。  
@@ -75,8 +89,8 @@ docker image ls
 「イメージ名＋タグ」で指定する方法でコマンドを実行してください。
 
 ```bash
-# latestタグのついたbash_alpineイメージを削除したい場合のコマンド例
-docker image rm bash_alpine:latest
+# testタグのついたbash_alpineイメージを削除したい場合のコマンド例
+docker image rm bash_alpine:test
 ```{{execute}}
 
 ```bash
