@@ -56,7 +56,7 @@ services:
     volumes:
       - ./python_script:/script
     environment:
-      - LANG=${PYTHON_CONTAINER_LANG}
+      - LANG=ja_JP.UTF8
 ```{{copy}}
 
 ```bash
