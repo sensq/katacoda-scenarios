@@ -1,5 +1,5 @@
 version: '3.0'
 services:
-    python_01:
-        image: python:alpine
-        tty: true
+  python_01:
+    image: python:alpine
+    tty: true
